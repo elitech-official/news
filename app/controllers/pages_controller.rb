@@ -23,6 +23,6 @@ class PagesController < ApplicationController
   private
   
   def page_params
-    params.require(:page).permit(:header, :body, :tag_list)
+    params.require(:page).permit(:header, :body, :tag_list, :theme, :thumb, :author_ids => [] )
   end
 end
