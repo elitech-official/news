@@ -10,8 +10,27 @@ class PagesController < ApplicationController
     elsif params[:tag]
       @pages = Page.tagged_with(params[:tag])
     else
-      @pages = Page.all
+      @pages = Page.all.limit(6)
     end
+    
+    #@news = Article.find(:all, :order => "id desc", :limit => 9).reverse
+   #TODO
+   # add articles & paginate news, do something with carousel in header
+  end
+  
+   def all
+    if params[:category]
+      @pages = Page.where(category: params[:category])
+    elsif params[:author]
+      @pages = Page.where(admin_users: params[:author])
+    elsif params[:theme]
+      @pages = Page.where(theme: params[:theme])
+    elsif params[:tag]
+      @pages = Page.tagged_with(params[:tag])
+    else
+      @pages = Page.all.limit(6)
+    end
+    
     #@news = Article.find(:all, :order => "id desc", :limit => 9).reverse
    #TODO
    # add articles & paginate news, do something with carousel in header
