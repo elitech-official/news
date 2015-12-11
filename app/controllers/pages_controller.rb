@@ -12,14 +12,14 @@ class PagesController < ApplicationController
     else
       @pages = Page.all
     end
-    @news = Article.find(:all, :order => "id desc", :limit => 9).reverse
+    #@news = Article.find(:all, :order => "id desc", :limit => 9).reverse
    #TODO
    # add articles & paginate news, do something with carousel in header
   end
 
   def show
     @page = Page.friendly.find(params[:id])
-    @see_also = Page.find(:all, :category => @page.category,  :order => "id desc", :limit => 5).reverse
+    #@see_also = Page.find(:all, :category => @page.category,  :order => "id desc", :limit => 5).reverse
   end
   
   def delete

@@ -1,11 +1,13 @@
-<div class="container slider col-sm-12 col-md-12 col-lg-12">
-	
+<div class="container slider col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	КАРУСЕЛЬ СО СТАТЬЯМИ
 	
  </div>
  
- <div class="container content-news cols-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<h3>Новости</h3>
-	<a href="#"><span>more news</span></a>
+ <div class="container content-news col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="news-title">
+		<h3>Новости</h3>
+		<a href="#"><span>more news</span></a>
+	</div>
 	<%= 9.times do%>
 		<div class="news">
 			<img src="" alt="Стремное фото" />
@@ -13,21 +15,22 @@
 		</div>
 	<%end%>
 </div>
-<div class="content-article row cols-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<div class="article-sidebar cols-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<div class="interview"></div>
-		<div class="cloud-tag"></div>
+<div class="content-article row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="article-sidebar col-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<div class="interview"> Опрос</div>
+		<div class="cloud-tag">Облако тегов</div>
 		
 	</div>
-	<div class="article cols-xs-8 col-sm-8 col-md-8 col-lg-8">
-		<h3>Статьи</h3>
-	<a href="#"><span>more article</span></a>
-		<%= 6.times do%>
-			<div class="article-item">
+	<div class="article col-xs-8 col-sm-8 col-md-8 col-lg-8">
+	   <div class="news-title">
+			<h3>Статьи</h3>
+			<a href="#"><span>more article</span></a>
+		</div>
+			<%= 6.times do%>
+				<div class="article-item">
 				<a href="#"><img src="#" alt="стремное фото" /></a>
 				<span> Стремная подпись к стремному фото</span>
-			</div>
-		
-		<%end%>
+				</div>
+			<%end%>
 	</div>
 </div>

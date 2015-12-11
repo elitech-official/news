@@ -6,29 +6,32 @@
 
 
                         /*-----HEADER------*/
-.header-categories{
-  height:100px;
-  background: #C5D1C5;
-  & ul{
-    text-align:center;
-    & li{
-      display:inline-block;
-      lists-style:none;
+.header-wrapper{  
+    background: #B8B8B8;                  
+  & .header-categories{
+     height:50px;
+     background: #EBEBEB;
+     & ul{
+        text-align:center;
+     & li{
+        display:inline-block;
+        lists-style:none;
+      }
+    }
+  }
+  & .header-logo{
+    min-height:100px;
+    background: #D1CFCF;
+    & a{ 
+     float:left;
+     }
+    & h2{
+      font-size:24px;
+      text-align:center;
     }
   }
 }
-.header-logo{
-  min-height:100px;
-  background: #C5A1C5;
-  & a{ 
-    float:left;
-    }
-  & h2{
-    font-size:24px;
-    text-align:center;
-  }
-}
-                      /*-------CONTENT-------*/
+                      /*-------CONTENT-INDEX-------*/
                      
 .slider{
   min-height:300px;
@@ -36,12 +39,19 @@
 }
 
 .content-news{
-  & h3{
-    font-size:24px;
-    }
-  & a{}
+  & .news-title{
+    min-height: 30px;
+    min-width: 170px;
+    margin-bottom: 20px;
+    text-align: right;
+    & h3{
+     font-size:24px;
+     display: inline;
+     }
+    & a{}
+  }
   & .news{
-    width: 33%;
+    width: 32%;
     background: #A5A1A5;
     float:left;
     margin:5px;
@@ -49,23 +59,31 @@
 }
 
 .content-article{
-  min-height:350px;
+  min-height:250px;
   & .article-sidebar{
     & .interview{
-      min-height:150px;
+      min-height:130px;
       background: #A5A1C5;
     }
     & .cloud-tag{
-      min-height:150px;
+      min-height:130px;
       background: #A5C1A5;
     }
   }
   & .article{
     background: #A5F1A5;
-    & h3{}
-    & a{}
+    & .news-title{
+       in-height: 30px;
+       min-width: 170px;
+       margin-bottom: 20px;
+       text-align: right;
+      & h3{
+        display: inline;
+      }
+      & a{}
+    }
     & .article-item{
-      width:33%;
+      width:30%;
       min-height:100px;
       float:left;
       margin:5px;
@@ -74,3 +92,88 @@
     }
   }
 }
+
+                            /*-------CONTENT-SHOW-------*/
+                           
+ .article-wapper{    
+ background: #E6E6E6;                  
+    & .article-body{
+    min-height:200px;
+     font-family:MS Sans Serif;
+    background: #B3B3B3;
+    & .article-text{
+       & .article-title{
+         text-align:center;
+         min-height:70px;
+         background: #DBDBDB;
+       & h2{
+           margin-top: 0px;
+          }
+       & .article-set{ }
+       }
+     & .article-info{
+       min-height:150px;
+       background: #DBDBDB;
+     }
+   }
+   & .read-more{
+     background: #DBDBDB;
+     & a{
+       text-decoration:none;
+       margin:5px;
+       background: #A6A6A6;
+       display: block;
+       min-height: 50px;
+     }
+     & .reclam{
+       text-align:center;
+       min-height:100px;
+       min-width:100px;
+       background: #F00;
+     }
+   }
+ }                       
+    & .about-autor{
+     background: #FFF67A;
+     min-height:80px;
+   }     
+    & .comment{
+      background:#BAB6B6;
+       min-height:80px;
+       & textarea{
+        resize:none;
+         width: 420px;
+         height: 70px;
+         display: block;
+     }
+   }    
+ }                 
+                                /*-------FOOTER-------*/
+.footer-wrapper{  
+  background: #B0B0B0;                            
+  & .footer { 
+    background: #B0B0B0; 
+    min-height:150px;                           
+    & .footer-timer{
+      min-height:150px;
+      background: #DBDBDB;
+    }                             
+    & .footer-socials{
+      & .socials{
+        min-height:75px;
+        background: #DBDBDB;
+        margin-bottom:5px;
+        text-align: center;
+       & a{
+         line-height: 75px;
+       }
+      }
+      & .partners{
+        min-height:75px;
+        background: #DBDBDB;
+       & span{}
+       & a{}
+      }
+     }
+    }
+   }
