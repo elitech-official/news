@@ -1,2 +1,33 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="container slider col-sm-12 col-md-12 col-lg-12">
+	
+	
+ </div>
+ 
+ <div class="container content-news cols-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<h3>Новости</h3>
+	<a href="#"><span>more news</span></a>
+	<%= 9.times do%>
+		<div class="news">
+			<img src="" alt="Стремное фото" />
+			<a href="#"><p>Идейные соображения высшего порядка, а также консультация с широким активом</p></a>
+		</div>
+	<%end%>
+</div>
+<div class="content-article row cols-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="article-sidebar cols-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<div class="interview"></div>
+		<div class="cloud-tag"></div>
+		
+	</div>
+	<div class="article cols-xs-8 col-sm-8 col-md-8 col-lg-8">
+		<h3>Статьи</h3>
+	<a href="#"><span>more article</span></a>
+		<%= 6.times do%>
+			<div class="article-item">
+				<a href="#"><img src="#" alt="стремное фото" /></a>
+				<span> Стремная подпись к стремному фото</span>
+			</div>
+		
+		<%end%>
+	</div>
+</div>
