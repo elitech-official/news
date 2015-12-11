@@ -22,16 +22,22 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
- gem 'activeadmin', github: 'activeadmin'
- gem 'friendly_id'
- gem 'devise'
- gem 'acts-as-taggable-on', '~> 3.4'
- gem 'babosa'
- gem 'ckeditor', github: 'galetahub/ckeditor'
- gem 'bootstrap-sass'
- gem 'paperclip', "~> 4.2"
- gem "carrierwave"
- gem "mini_magick"
+gem 'activeadmin', github: 'activeadmin'
+gem 'friendly_id'
+gem 'devise'
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'babosa'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'bootstrap-sass'
+gem 'paperclip', "~> 4.2"
+gem "carrierwave"
+gem "mini_magick"
+gem "punching_bag"
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rvm'
+gem 'passenger'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
