@@ -18,7 +18,7 @@ ActiveAdmin.register Page do
     
     def show
       @page = Page.friendly.find(params[:id])
-      @page.author = @page.admin_users.map {|admin| admin.name }
+      @page.authors = @page.admin_users.map {|admin| admin.name }
     end
     
     def edit

@@ -1,62 +1,51 @@
-
 <div class="page-wapper container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="page-body  row  col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<div class="page-text col-xs-8 col-sm-8 col-md-8 col-lg-8">
 			<div class="page-title">
 				<div class="page-set">
-				<span class="pg-time">
-					<%= @page.created_at.strftime("%d.%m.%Y") %>
-					</span>
-					
-				<span class="page-autor">
-					<% @page.admin_users.each do |ath|%>
-					<%= link_to ath.name, admin_user_path(id: ath.id)%>
-					<%end%>
-				</span>
-				
-				<span class="page-categories">
-					<%= @page.category %>
-					</span>
-				</div>	
+					<span class="pg-time"> <%= @page.created_at.strftime("%d.%m.%Y") %> </span>
+
+					<span class="page-autor"> <% @page.admin_users.each do |ath|%>
+						<%= link_to ath.name, admin_user_path(id: ath.id)%>
+						<%end%> </span>
+
+					<span class="page-categories"> <%= @page.category %> </span>
+				</div>
 				<span class="page-img"><%= image_tag @page.thumb %></span>
 			</div>
 			<div class="page-info">
 				<%= raw  @page.body %>
-		  	</div>
-		  	
-		  	<div class="about-autor ">
-		  		<% @page.admin_users.each do |ath|%>
-					<span class="about-autor-name"><%= ath.name %></span>
-		       
-					<span class="about-autor-face"><%= ath.avatar %></span>
+			</div>
+
+			<div class="about-autor ">
+				<% @page.admin_users.each do |ath|%>
+				<span class="about-autor-name"><%= ath.name %></span>
+
+				<span class="about-autor-face"><%= ath.avatar %></span>
 				<%end%>
 			</div>
-			
+
 			<div class="comment">
 				<form>
-				<h3> Оставить комментарий</h3>
-				<textarea name="text" placeholder="ваш комметарий"> </textarea>
-				<input type="submit" value="Отправить">
-		 		</form>
+					<h3> Оставить комментарий</h3>
+					<textarea name="text" placeholder="ваш комметарий"> </textarea>
+					<input type="submit" value="Отправить">
+				</form>
 			</div>
-		  	
 		</div>
 		<div class="read-more col-xs-4 col-sm-4 col-md-4 col-lg-4">
 			<h4>Читайте также</h4>
-		<%= 4.times do%>
-			<a href="">
-				<img src="" alt="Гусь" />
-				<span>важные задания по разработке важные задания по разработке</span>
-			</a>
-		<%end%>
-			<div class="reclam">реклама УВЕЛИЧЕНЕ ЧЛЕНА!</div>
-		
+			<%= 4.times do%>
+			<a href=""> <img src="" alt="Гусь" /> <span>важные задания по разработке важные задания по разработке</span> </a>
+			<%end%>
+			<div class="reclam">
+				реклама УВЕЛИЧЕНЕ ЧЛЕНА!
+			</div>
 		</div>
-	 
 	</div>
 	<div class="comment col-xs-8 col-sm-8 col-md-8 col-lg-8">
-			 <%= nested_comments @comments %>
-			<h3> Оставить комментарий</h3>
-			<%= render "comments/form"%>
+		<%= nested_comments @comments %>
+		<h3> Оставить комментарий</h3>
+		<%= render "comments/form"%>
 	</div>
 </div>
