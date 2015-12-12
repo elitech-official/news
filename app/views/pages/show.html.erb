@@ -1,21 +1,45 @@
 
-<div class="article-wapper container col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<div class="article-body  row  col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		<div class="article-text col-xs-8 col-sm-8 col-md-8 col-lg-8">
-			<div class="article-title">
-				<h2> ЭПФ ЕБЕТ ГУСЕЙ!</h2>
-				<span class="article-time article-set">02.0201.02222</span>
-				<span class="article-autor article-set">Кто-то там</span>
-				<span class="article-categories article-set">Лайфстайл</span>
+<div class="page-wapper container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="page-body  row  col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="page-text col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			<div class="page-title">
+				<div class="page-set">
+				<span class="pg-time">
+					<%= @page.created_at.strftime("%d.%m.%Y") %>
+					</span>
+					
+				<span class="page-autor">
+					<% @page.admin_users.each do |ath|%>
+					<%= link_to ath.name, admin_user_path(id: ath.id)%>
+					<%end%>
+				</span>
+				
+				<span class="page-categories">
+					<%= @page.category %>
+					</span>
+				</div>	
+				<span class="page-img"><%= image_tag @page.thumb %></span>
 			</div>
-			<div class="article-info">
-				<img src="" alt="фото" />
-				<p>Не следует, однако забывать, что дальнейшее развитие различных форм 
-				 деятельности позволяет выполнять важные задания по разработке соответствующий 
-				 условий активизации. Разнообразный и богатый опыт реализация намеченных плановых
-				 заданий влечет за собой процесс внедрения и модернизации существенных финансовых
-				 и административных условий</p>
+			<div class="page-info">
+				<%= raw  @page.body %>
 		  	</div>
+		  	
+		  	<div class="about-autor ">
+		  		<% @page.admin_users.each do |ath|%>
+					<span class="about-autor-name"><%= ath.name %></span>
+		       
+					<span class="about-autor-face"><%= ath.avatar %></span>
+				<%end%>
+			</div>
+			
+			<div class="comment">
+				<form>
+				<h3> Оставить комментарий</h3>
+				<textarea name="text" placeholder="ваш комметарий"> </textarea>
+				<input type="submit" value="Отправить">
+		 		</form>
+			</div>
+		  	
 		</div>
 		<div class="read-more col-xs-4 col-sm-4 col-md-4 col-lg-4">
 			<h4>Читайте также</h4>
@@ -30,14 +54,6 @@
 		</div>
 	 
 	</div>
-
-	<div class="about-autor col-xs-8 col-sm-8 col-md-8 col-lg-8">
-		<p>Разнообразный и богатый опыт реализация намеченных плановых
-		 заданий влечет за собой процесс внедрения и модернизации существенных финансовых
-		 и административных условий</p>
-		 <img src=" " alt="face palm" />
-	</div>
-	
 	<div class="comment col-xs-8 col-sm-8 col-md-8 col-lg-8">
 			 <%= nested_comments @comments %>
 			<h3> Оставить комментарий</h3>
