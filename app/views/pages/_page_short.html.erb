@@ -9,7 +9,7 @@
 <%= page.category %>
 <%= page.theme %>
  <div class="keywords-items col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <% @page.tag_list.each do |tag| %>
+      <% page.tag_list.each do |tag| %>
       	<div class="keyword"><span> <%= link_to tag, tag_path(tag: tag) %> </span></div>
       <% end %>
     </div>
