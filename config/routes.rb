@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   
   resources :pages
   resources :articles
-  get '/tags/:tag', to: 'pages#index', as: :tag
-  root to: 'pages#index'
+  resources :admin_users
+  get '/tags/:tag', to: 'pages#index', as: :tag 
+  get 'pages/all', to: 'pages#all', as: :index
+  root to: 'pages#all'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

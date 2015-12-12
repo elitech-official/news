@@ -1,0 +1,37 @@
+<div class="container slider col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	КАРУСЕЛЬ СО СТАТЬЯМИ
+	
+ </div>
+ 
+ <div class="container content-news col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="news-title">
+		<h3>Новости</h3>
+		<a href="#"><span>more news</span></a>
+	</div>
+	<%= 9.times do%>
+		<div class="news">
+			<%=image_tag"bleat.png", :alt=>"Foto", :class=>"news-img"%>
+			<a href="#"><p>Идейные соображения высшего порядка, а также консультация с широким активом</p></a>
+		</div>
+	<%end%>
+</div>
+<div class="content-article row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="article-sidebar col-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<div class="interview"> Опрос</div>
+		<div class="cloud-tag">Облако тегов</div>
+		
+	</div>
+	<div class="article col-xs-8 col-sm-8 col-md-8 col-lg-8">
+	   <div class="news-title">
+			<h3>Статьи</h3>
+			<a href="#"><span>more article</span></a>
+		</div>
+		<%=link_to "more", pages_path%>
+			<% @pages.each do |page|%>
+				<div class="article-item">
+				<%=image_tag page.thumb, :alt=>"Foto", :class=>"article-img"%>
+				<a href="<%= page_path(id: page.id)%>"><span><%= page.header%></span></a>
+				</div>
+			<%end%>
+	</div>
+</div>

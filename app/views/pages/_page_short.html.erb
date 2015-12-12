@@ -1,0 +1,16 @@
+<div class="page-item col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="<%= page.category %>"> <%= page.header %></div>
+<%= image_tag page.thumb %>
+<%= raw page.body.truncate(200, separator: " ") %>
+<% page.admin_users.each do |ath|%>
+<%= link_to ath.name, admin_user_path(id: ath.id)%>
+<%end%>
+<%= page.created_at.strftime("%d.%m.%Y") %>
+<%= page.category %>
+<%= page.theme %>
+ <div class="keywords-items col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <% @page.tag_list.each do |tag| %>
+      	<div class="keyword"><span> <%= link_to tag, tag_path(tag: tag) %> </span></div>
+      <% end %>
+    </div>
+</div>
