@@ -1,0 +1,12 @@
+<%= form_for [@commentable, @comment], controller: "comments", action: "create", method: "post" do |f| %>
+   <%= f.hidden_field :parent_id %>
+
+    <p>
+      <%= f.label :text, "New comment" %>
+    </p>
+    <br/>     
+      <%= f.text_area :text, :rows => 4 %>
+   <p>
+    <%= f.submit "Отправить" %>
+    </p>
+<% end %>

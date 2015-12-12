@@ -4,6 +4,7 @@ class Page < ActiveRecord::Base
   
   has_many :pages_admin_users
   has_many :admin_users, through: :pages_admin_users
+  has_many :comments, :as => :commentable, :dependent => :destroy
   
   # paperclip attachment for header image
   

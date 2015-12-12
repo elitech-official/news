@@ -1,4 +1,4 @@
-<%= raw  @page.body %>
+
 <div class="article-wapper container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="article-body  row  col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<div class="article-text col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -39,10 +39,8 @@
 	</div>
 	
 	<div class="comment col-xs-8 col-sm-8 col-md-8 col-lg-8">
-		<form>
+			 <%= nested_comments @comments %>
 			<h3> Оставить комментарий</h3>
-			<textarea name="text" placeholder="ваш комметарий"> </textarea>
-			<input type="submit" value="Отправить">
-		 </form>
+			<%= render "comments/form"%>
 	</div>
 </div>
