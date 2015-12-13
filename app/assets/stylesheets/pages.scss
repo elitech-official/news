@@ -41,61 +41,117 @@
 }
 
 .content-article{
+  border-top:2px solid #9E78FF;
+  background: #F5F5F5;
+  padding-right: 25px;
   & .article-title{
     min-height: 30px;
     min-width: 170px;
-    margin-bottom: 20px;
     text-align: right;
     & h3{
      font-size:24px;
      display: inline;
      }
-    & a{}
+    & a{
+      text-decoration: none;
+      color:#000;
+      font-size:1.4vw;
+      }
   }
   & .article{
-    width: 32%;
-    float:left;
-    margin:5px;
+    max-height: 175px;
+    font-size: 1.2vw;
+    margin-bottom: 5px;
+    & .article-img{
+      margin-top: 10px;
+      height: 100px;
+      width: 100;
+      & img{
+        width:100%;
+        min-height:50px;
+        min-width:auto;
+      }
+    }
+    & .article-text{
+       max-height:100px;
+       overflow: hidden;
+       & a{
+         text-decoration:none;
+         color:#000;
+       }
+    }
+
   }
 }
 
 .content-page{
-  min-height:250px;
-  & .page-sidebar{
+  background: #F5F5F5;
+  min-height:150px;
+   & .page-sidebar{
     & .interview{
       min-height:130px;
+      border:1px solid #000;
+      margin-bottom:5px;
     }
     & .cloud-tag{
       min-height:130px;
+      border:1px solid #000;
     }
   }
   & .page{
-    & .article-title{
-       in-height: 30px;
+    border-top:2px solid #9E78FF;
+     padding-right: 0px;
+      & .article-title{
+       min-height: 30px;
        min-width: 170px;
-       margin-bottom: 20px;
        text-align: right;
       & h3{
         display: inline;
       }
-      & a{}
+      & a{ 
+        text-decoration: none;
+      color:#000;
+      font-size:1.4vw;}
     }
     & .page-preview{
-      width:30%;
       min-height:100px;
-      float:left;
       margin:5px;
-      & .page-img{
-        height:100px;
-        width:auto;
+
+      & img{
+        height: 200px;
+        width: 100%;
       }
-      & a{
-        display:block;
-      }
+      & .page-text{
+        height: 200px; 
+        margin-bottom:-200px;
+        line-height:200px;
+        opacity: 0;
+        text-align: center;
+        background: rgba( 25,40,247, 0.3);
+        & a{
+          text-decoration:none;
+          & span{
+            font-size:1.6vw;
+            color: #FFFFFF;
+          }
+        }
+         }
       
     }
   }
 }
+
+.article:hover{
+  box-shadow: 0px 0px 5px 2px #7569F5;
+}
+
+.page-preview:hover{
+ & .page-text{
+   opacity: 1 !important;
+   transition: ease-out 0.4s;
+   
+   }
+  }
 
                             /*-------CONTENT-SHOW-------*/
 
@@ -266,7 +322,22 @@
        min-width:100px;
      }
    }
-  }                       
+  } 
+  & .comment{
+        background:#BAB6B6;
+        min-height:80px;
+        & textarea{
+          resize:none;
+           width: 420px;
+           height: 70px;
+           display: block;
+          }
+        & input{
+          height: 30px;
+          width: 120px;
+        }  
+        } 
+                        
  }                 
  
  .page-recent{
