@@ -1,21 +1,20 @@
-<a href="<%= page_path(id: page.slug)%>">
-	<div class="page-recent col-sm-12 col-md-12 col-xs-12 col-lg-12">
-		<div class="page-recent-image col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			<%= image_tag page.thumb, class: "preview-recent-image"%>
-	    </div>
-	    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-	    	<span class="page-recent-header"> <%= page.header%> <span>
-	    </div>
-	    <span class="page-recent-text"> <%= page.preview%> </span>
-	    <div class="recent-credentials col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	    	<div class="recent-author col-xs-6 col-md-6 col-sm-6 col-lg-6">
-	    		<% page.admin_users.each do |adm| %>
-	    		  <span class="recent-author-name "><%= adm.name %> </span>
-	    		<% end %>
-	        </div>
-	        <div class="recent-date col-xs-6 col-md-6 col-sm-6 col-lg-6">
-	    		<%= page.created_at.strftime("%d.%m.%Y")%>
-	        </div>
-	    </div>
+<div class="page-recent col-sm-12 col-md-12 col-xs-12 col-lg-12">
+	<a href="<%= page_path(id: page.slug)%>">
+	<div class="page-recent-image col-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<%= image_tag page.thumb, class: "preview-recent-image" if page.thumb%>
 	</div>
-</a>
+	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+		<span class="page-recent-header"> <%= page.header%> <span>
+	</div> <span class="page-recent-text"> <%= page.preview%> </span> </a>
+	<div class="recent-credentials col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="recent-author col-xs-8 col-md-8 col-sm-8 col-lg-8">
+			<% page.admin_users.each do |adm| %>
+			<span class="recent-author-name "><%= link_to adm.name.mb_chars.upcase.to_s, author_path(id: adm.id) %> </span>
+			<% end %>
+		</div>
+		<div class="recent-date col-xs-4 col-md-4 col-sm-4 col-lg-4">
+			<%= page.created_at.strftime("%d.%m.%Y")%>
+		</div>
+	</div>
+</div>
+

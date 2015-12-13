@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213005329) do
+ActiveRecord::Schema.define(version: 20151213145707) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(version: 20151213005329) do
     t.integer  "avatar_file_size",       limit: 4
     t.datetime "avatar_updated_at"
     t.string   "info",                   limit: 191
+    t.string   "vk",                     limit: 191
+    t.string   "fb",                     limit: 191
+    t.string   "twitter",                limit: 191
+    t.string   "instagram",              limit: 191
+    t.string   "rss",                    limit: 191
+    t.string   "occupy",                 limit: 191
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -82,8 +88,8 @@ ActiveRecord::Schema.define(version: 20151213005329) do
   create_table "comments", force: :cascade do |t|
     t.text     "text",             limit: 65535
     t.integer  "commentable_id",   limit: 4
-    t.string   "commentable_type", limit: 191
-    t.string   "ancestry",         limit: 191
+    t.string   "commentable_type", limit: 255
+    t.string   "ancestry",         limit: 255
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "name",             limit: 191

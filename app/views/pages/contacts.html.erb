@@ -1,0 +1,35 @@
+<div class="contacts container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<% @users.each do |ath|%>
+	<div class="author container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7"><span class="about-author-name"><%= ath.name%></span> </div>
+	<div class=" occupy col-xs-5 col-sm-5 col-md-5 col-lg-5 text-right"> <span><%= ath.occupy %> </span> </div>
+	<div class="author-item col-xs-12 col-sm-12 col-md-12 col-lg-12">		
+		<div class="author-about-me col-xs-12 col-sm-9 col-md-9 col-lg-9">
+			<span class="about-author-info"> <i> <%= ath.info %> </i> </span>
+		</div>
+		<div class="author-about-face col-xs-12 col-sm-3 col-md-3 col-lg-3">
+			<%= image_tag ath.avatar %>
+		</div>
+		<div class="author-socials col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<ul>
+			<% if ath.vk%>
+			<li class="author-vk"><a href="<%= ath.vk%>"> <i class="fa fa-vk"> </i> </a> </li>
+			<% end %>
+			<% if ath.fb %>
+			<li class="author-fb"><a href="<%= ath.fb%>"> <i class="fa fa-facebook"> </i> </a> </li>
+			<% end %>
+			<% if ath.twitter %>
+			<li class="author-twitter"><a href="<%= ath.twitter%>"> <i class="fa fa-twitter"> </i> </a> </li>
+			<% end %>
+			<% if ath.instagram %>
+			<li class="author-vk"><a href="<%= ath.vk%>"> <i class="fa fa-instagram"> </i> </a> </li>
+			<% end %>
+			<% if ath.rss %>
+			<li class="author-rss"><a href="<%= ath.rss%>"> <i class="fa fa-rss"> </i> </a> </li>
+			<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+	<% end %>
+</div>

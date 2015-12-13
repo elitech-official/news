@@ -1,1 +1,28 @@
-<h1> 123 </h1>
+<div class="author-page container col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+	<%= render partial: 'author', locals:{ath: @author}%>
+</div>
+<div class="author-pages col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<% @pages.each do |page| %>
+	<div class="spacer col-xs-6 col-sm-4 col-md-4 col-lg-3">
+		<div class="text-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<span class=" index-page-preheader"> <%= link_to page.header, page_path(id: page.slug) %> </span>
+		</div>
+		<div class="page-preview col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="page-text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<a href="<%= page_path(id: page.slug)%>"><span><%= page.preview %></span></a>
+			</div>
+			<%= image_tag page.thumb, :alt=>"Foto"%>
+		</div>
+		<div class="page-preview-credentials col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="index-page-predate text-left col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<%= page.created_at.strftime("%d.%m.%Y")%>
+			</div>
+			<div class="index-page-preauthor text-right col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<% page.admin_users.each do |ath|%>
+				<%= link_to ath.name.mb_chars.upcase.to_s, author_path(id: ath.id)%>
+				<%end%>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>

@@ -11,11 +11,11 @@
 					<div class="page-set col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<span class="page-author"> 
 							<% @page.admin_users.each do |ath|%>
-								<%= link_to ath.name, author_path(id: ath.id)%>
+								<%= link_to ath.name.mb_chars.upcase.to_s, author_path(id: ath.id)%>
 							<%end%> 
 						</span>
 						<span class="pg-time"> <i> <%= @page.created_at.strftime("%d.%m.%Y") %>  </i> </span>
-						<span class="page-categories"> <%= link_to @page.category, pages_path(category: @page.category) %> </span>
+						<span class="page-categories"> <%= link_to @page.category.mb_chars.upcase.to_s, pages_path(category: @page.category) %> </span>
 					</div>
 					<div class=" fixt col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<%= image_tag @page.thumb %>
@@ -36,16 +36,7 @@
 			</div>
 			<div class="about-author col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<% @page.admin_users.each do |ath|%>
-				<div class="author-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="author-about-me col-xs-12 col-sm-8 col-md-8 col-lg-8">
-						<span class="about-author-name"><%= ath.name %></span>
-						<span class="about-author-info"> <i> <%= ath.info %> </i> </span>
-					</div>
-					
-					<div class="author-about-face col-xs-12 col-sm-4 col-md-4 col-lg-4">
-						<%= image_tag ath.avatar %>
-					</div>
-				</div>
+				  <%= render partial: 'author', locals: {ath: ath}%>
 				<%end%>
 			</div>
 			<div class="comment-area col-xs-12 col-sm-12 col-md-12 col-lg-12">

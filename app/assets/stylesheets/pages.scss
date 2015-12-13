@@ -6,10 +6,12 @@
 
 *{
   font-family: Roboto;
+  font-style: normal;
 }
 
                         /*-----HEADER------*/
-.header-wrapper{  
+.header-wrapper{ 
+  padding: 0;
    & .navbar-default{
      margin-bottom:0px;
     & .navbar-collapse{
@@ -25,7 +27,7 @@
   }
   & .header-logo{
      background: url(header.jpeg);
-     background-size: contain;     
+     background-size: 100% 100%;  
      background-repeat: no-repeat;
     height:228px;
        & a{ 
@@ -55,7 +57,7 @@
   font-size: 1.2vw;
   color: black;
   margin: 15px 0 15px 0;
-  text-align: right;
+  text-align: left;
 }
 
 .cloud-tag {
@@ -74,24 +76,37 @@
 }
 
 .content-article{
-  border-top:2px solid #9E78FF;
-  padding-right: 25px;
   & .article-title{
+      border-bottom: 1px solid black;
+      margin: 10px 0 10px 0;
+  }
+
+  padding-right: 25px;
+}
+
+.article-title{
     min-height: 30px;
     min-width: 170px;
     text-align: right;
     & h3{
+      position: absolute;
+      top:0;
+      left: 10px;
+      margin-top: 0;
      font-size:24px;
      display: inline;
      }
     & a{
       text-decoration: none;
       color:#000;
-      font-size:1.4vw;
+      font-size:1.2vw;
+      &:hover{
+        color: #008B8B;
+        text-decoration: none;
+      }
       }
   }
-}
-
+  
 .article{
     max-height: 175px;
     font-size: 1.2vw;
@@ -131,21 +146,18 @@
     }
   }
   & .page{
-    border-top:2px solid #9E78FF;
-     padding: 0px;
-      & .article-title{
-       min-height: 30px;
-       min-width: 170px;
-       text-align: right;
-      & h3{
-        display: inline;
-      }
-      & a{ 
-        text-decoration: none;
-      color:#000;
-      font-size:1.4vw;}
+    & .article-title{
+          border-bottom: 1px solid black;
+          margin-bottom: 15px;
+          & h3{
+            margin-top: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
     }
 
+     padding: 0px;
   }
 }
 
@@ -199,16 +211,34 @@
 
 .show-keywords{
   margin: 20px 0 10px 0;
+  & a{
+    &:hover{
+      color: black;
+      text-decoration: none;
+      transition: .5s ease;
+    }
+  }
 }
 
 .about-author{
   margin-top: 10px;
   padding: 0;
-  & .author-item{
+}
+
+.author-link{
+  display: block;
+  font-size: 1.5vw;
+  &:hover{
+    text-decoration: none;
+    color: black;
+    transition: .5s ease;
+  }
+}
+.author-item{
     min-height: 180px;
     margin: 10px 0 0 0;
     padding: 0;
-    border-top: 1px solid black;
+    border-top: 1px dotted black;
     background-color: #D9EDF7;
     & .author-about-me{
       margin-top: 15px;
@@ -217,11 +247,8 @@
         width: 100%;
         padding: 10px 0 0 0;
       }
-      & .about-author-name{
-        font-size: 1.5vw;
-        color: black;
-      }
       & .about-author-info{
+        padding-left: 10px;
         color: #808080;
         font-size: 1.3vw;
       }
@@ -231,15 +258,16 @@
       margin-bottom: 15px;
       text-align: center;
       & img{
-        height: 100px;
-        width: 100px;
+        height: 200px;
+        width: 200px;
         border-radius: 50%;
       }
     }
   }
-}
-
-
+.about-author-name{
+        font-size: 1.5vw;
+        color: black;
+      }
 
  .page-wapper{                   
     & .page-body{
@@ -368,7 +396,6 @@
      & a{
        text-decoration:none;
        margin:5px;
-       display: block;
        min-height: 50px;
      }
      & .reclam{
@@ -398,6 +425,14 @@
          margin-bottom: 10px;
          text-align: left;
          padding: 0;
+         & a{
+           text-decoration: none;
+           &:hover{
+            color: black;
+            text-decoration: none;
+            transition: .5s ease;
+          }
+         }
          & span{
            margin: 0 10px 0 0;
          }
@@ -440,8 +475,7 @@
        min-height: 50px;
      }
      & .recent-credentials{
-       padding-top: 5px;
-       padding-bottom: 5px;
+       padding: 5px 0 5px 0;
        & .recent-author{
          padding-left: 0;
          text-align: left;
@@ -449,6 +483,14 @@
            float: left;
            color: #008B8B;
            font-size: .7vw;
+           & a{
+             text-decoration: none;
+             &:hover{
+      color: black;
+      text-decoration: none;
+      transition: .5s ease;
+    }
+           }
          }
        }
        & .recent-date{
@@ -459,19 +501,18 @@
  }
  
                                 /*-------FOOTER-------*/
-.footer-wrapper{  
-  background: #B0B0B0;                            
-  & .footer { 
-    background: #B0B0B0; 
+.footer-wrapper{
+  border-top: 1px dotted #A9A9A9;
+  padding-top: 10px;
+  margin-top: 20px;                       
+  & .footer {  
     min-height:150px;                           
     & .footer-timer{
       min-height:150px;
-      background: #DBDBDB;
     }                             
     & .footer-socials{
       & .socials{
         min-height:75px;
-        background: #DBDBDB;
         margin-bottom:5px;
         text-align: center;
        & a{
@@ -480,25 +521,225 @@
       }
       & .partners{
         min-height:75px;
-        background: #DBDBDB;
        & span{}
        & a{}
       }
      }
     }
    }
-   
+
+.footer-socials{
+  border-left: 1px dotted #A9A9A9;
+  & a{
+    &:hover{
+      text-decoration: none;
+      color: black;
+      transition: 1s ease;
+    }
+  }
+}
+
+
 //---------------------------- INDEX -----------------------------//
 
 .index.container{
   margin-top: 20px;
+  & .article{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border-top: 1px solid black;
+  }
 }
 
 .no-pages-found{
     color: #A9A9A9;
     font-size: 1.5vw;
+    margin-bottom: 20px;
+    display: block;
   }
+
+.index-page-preheader{
+  & a{
+    font-weight: 600;
+    color: #202020;
+    margin: 10px 0 10px 0;
+    font-size: 1.2vw;
+    text-decoration: none;
+    font-size: 1vw;
+    display: block;
+    min-height: 60px;
+  }
+}
+
+.index-page-predate{
+  font-size: .7vw;
+}
+
+.index-page-preauthor{
+  font-size: .7vw;
+  color: #808080;
+  & a{
+    text-decoration: none;
+    &:hover{
+      color: black;
+      text-decoration: none;
+      transition: .5s ease;
+    }
+  }
+}
 
 .pages-found{
   border-right: 1px solid black;
+}
+
+.spacer{
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+
+// ------------------------------ AUTHOR PARTIAL --------------------------------------//
+
+.author-socials{
+  & ul{
+    list-style-type: none;
+    padding: 0;
+    & li{
+      width: 34px;
+      //padding-left: 0;
+      display: inline-block;
+      margin: 0 20px 0 0;
+      font-size: 24px;
+      color: black;
+      & a{
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        border-radius: 4px;
+        &:hover{
+          background-color: #008080;
+          transition: .5s ease;
+        }
+        &:hover > i{
+          color: white;
+          transition: .5s ease;
+        }
+      }
+    }
+  }
+}
+
+
+//--------------------------------- AUTHOR PAGE --------------------------------//
+
+.author-page.container{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  & .author.container{
+    background-color: #D9EDF7;
+  }
+  & .author-item{
+  }
+}
+
+
+
+.author-page{
+  & .page-text{
+        & a{
+          & span{
+            position: absolute;
+            top: 25%;
+            left: 0;
+            line-height: 100%;
+            width: 100%;
+            font-size:1.6vw;
+            color: #FFFFFF;
+          }
+      }
+   }
+}
+
+//----------------------------------- CAROUSEL -----------------------------------//
+
+.container.slider{
+  height: inherit;
+  min-height: 300px;
+  & #wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+  & #carousel {
+  width: 100%;
+  overflow: hidden;
+}
+  #carousel img {
+  display: block;
+  max-height: 300px;
+  float: left;
+}
+ 
+  #source {
+  text-align: center;
+  width: 400px;
+  margin: 0 0 0 -200px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+}
+}
+
+.who-page{
+  & .coolstory{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  h2{
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0 15px 0;
+    width: 100%;
+    background-color: #D0D0D0;
+    color: black;
+    font-size: 2.3vw;
+  }
+  & p{
+    font-size: 1vw;
+    color: #808080;
+    letter-spacing: 2px;
+  }
+  & a{
+    display: block;
+    color: #337AB7;
+    font-size: 1vw;
+    float: right;
+    &:hover{
+      color: black;
+      text-decoration: none;
+      transition: .5s ease;
+    }
+  }
+}
+
+.contacts.container{
+  & .author-item{
+    background-color: white;
+    margin: 15px 0 15px 0;
+  }
+  & .author.container{
+    & .author-about-face{
+      & img{
+        width: 200px;
+        height: 200px;
+      }
+    }
+    padding-top: 25px;
+    & .occupy{
+      & *{
+      font-size: 1.5vw;
+      }
+    }
+  }
 }

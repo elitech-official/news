@@ -4,30 +4,38 @@ class PagesController < ApplicationController
   
   def index
     if params[:category]
-      @pages = Page.where(category: params[:category])
-      @articles = Article.where(category: params[:category])
+      @pages = Page.where(category: params[:category]).where.not(category: "Новости")
+      if params[:category] == "Новости"
+        @pages = Page.where(category: "Новости")
+      end
     elsif params[:theme]
-      @pages = Page.where(theme: params[:theme])
-      @articles = Article.where(theme: params[:theme])
+      @pages = Page.where(theme: params[:theme]).where.not(category: "Новости")
     elsif params[:tag]
       @pages = Page.tagged_with(params[:tag])
       @articles = Article.tagged_with(params[:tag])
     else
       @pages = Page.all
-      @articles = Article.all
     end
-    @pages.paginate(:page => params[:page], :per_page => 10)
-    @articles.paginate(:page => params[:page], :per_page => 20)
   end
   
    def all
-    @pages = Page.last(6)
-    @articles = Article.last(9)
+    @pages = Page.where.not(category: "Новости").last(6)
+    @articles = Page.where(category: "Новости").last(9)
+    @main_pages = Page.where(main: true)
   end
   
   def author
     @author = AdminUser.find(params[:id])
+    @pages = @author.pages
     render 'author'
+  end
+  
+  def who
+    render 'who'
+  end
+  
+  def contacts
+    @users = AdminUser.all
   end
   
   def show
