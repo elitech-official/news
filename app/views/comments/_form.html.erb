@@ -1,11 +1,8 @@
-<%= form_for [@commentable, @comment], controller: "comments", action: "create", method: "post" do |f| %>
+<%= form_for [@commentable, @comment] do |f| %>
    <%= f.hidden_field :parent_id %>
-
-    <p>
-      <%= f.label :text, "New comment" %>
-    </p>
+	<%= f.text_field :name, placeholder: "Введите имя"%>
     <br/>     
-      <%= f.text_area :text, :rows => 4 %>
+      <%= f.text_area :text, :rows => 4, placeholder: "Комментарий"%>
    <p>
     <%= f.submit "Отправить" %>
     </p>

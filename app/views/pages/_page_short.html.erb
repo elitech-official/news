@@ -3,7 +3,7 @@
 <%= image_tag page.thumb %>
 <%= raw page.body.truncate(200, separator: " ") %>
 <% page.admin_users.each do |ath|%>
-<%= link_to ath.name, admin_user_path(id: ath.id)%>
+<%= link_to ath.name, author_path(id: ath.id)%>
 <%end%>
 <%= page.created_at.strftime("%d.%m.%Y") %>
 <%= page.category %>

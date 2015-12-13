@@ -11,12 +11,12 @@ class CommentsController < ApplicationController
   def create
     @commentable = find_commentable
     @comment = @commentable.comments.create(comment_params)
-    if @comment.save!
-      flash[:notice] = "Successfully created comment"
+    if @comment.save
+      flash[:notice] = "Комментарий успешно добавлен!"
       redirect_to @commentable
     else
-      flash[:error] = "Error adding comment"
-      redirect_to root_path
+      flash[:error] = "При добавлении комментария произошла ошибка!"
+      redirect_to @commentable
     end
   end
  
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   end
    
    def comment_params
-     params.require(:comment).permit(:text, :commentable_id, :commentable_type, :ancestry)
+     params.require(:comment).permit(:text, :commentable_id, :commentable_type, :ancestry, :name, :parent_id)
    end
    
 end

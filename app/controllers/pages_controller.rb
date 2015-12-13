@@ -5,31 +5,34 @@ class PagesController < ApplicationController
   def index
     if params[:category]
       @pages = Page.where(category: params[:category])
-    elsif params[:author]
-      @pages = Page.where(admin_users: params[:author])
+      @articles = Article.where(category: params[:category])
     elsif params[:theme]
       @pages = Page.where(theme: params[:theme])
+      @articles = Article.where(theme: params[:theme])
     elsif params[:tag]
       @pages = Page.tagged_with(params[:tag])
+      @article = Page.tagged_with(params[:tag])
     else
-      @pages = Page.all.limit(6)
+      @pages = Page.all
+      @articles = Article.all
     end
-    #@news = Article.find(:all, :order => "id desc", :limit => 9).reverse
-   #TODO
-   # add articles & paginate news, do something with carousel in header
+    @pages.paginate(:page => params[:page], :per_page => 10)
+    @articles.paginate(:page => params[:page], :per_page => 20)
   end
   
    def all
-    @pages = Page.all.limit(5).reverse
-    
-    #@news = Article.find(:all, :order => "id desc", :limit => 9).reverse
-   #TODO
-   # add articles & paginate news, do something with carousel in header
+    @pages = Page.last(6)
+    @news = Article.last(9)
   end
-
+  
+  def author
+    @author = AdminUser.find(params[:id])
+    render 'author'
+  end
+  
   def show
     @page = Page.friendly.find(params[:id])
-    #@see_also = Page.find(:all, :category => @page.category,  :order => "id desc", :limit => 5).reverse
+    @recent_pages = Page.where(category: @page.category).last(5)
   end
   
   def delete

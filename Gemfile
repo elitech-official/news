@@ -39,6 +39,7 @@ gem 'capistrano-bundler'
 gem 'capistrano-rvm'
 gem 'passenger'
 gem 'ancestry'
+gem 'will_paginate'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

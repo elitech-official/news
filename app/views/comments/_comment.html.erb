@@ -1,5 +1,12 @@
- 
-<span> <%= comment.created_at.strftime('%b %d, %Y at %H:%M') %> </span>
- <p> <%= simple_format comment.text %> </p>
-   <%= link_to "Reply", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment) %>
+<div class="comment-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="comment-header col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+  	    <span class="comment-name"> <%= comment.name %> </span>
+    <span class=" comment-date"><%= comment.created_at.strftime('%d.%m.%Y, %H:%M') %> </span>
+
+  </div>
+  <div class="comment-text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <%= simple_format comment.text %>
+  </div>
+   <span class="comment-reply"><%= link_to "Ответить", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment) %> </span>
    <%= nested_comments comment.children %>
+</div>

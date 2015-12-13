@@ -10,7 +10,7 @@ module FilmFan::Commentable
 
   def comments
     @commentable = find_commentable
-    @comments = @commentable.comments.arrange(:order => :created_at)
+    @comments = @commentable.comments.arrange(order: "created_at DESC")
     @comment = Comment.new
   end
 
