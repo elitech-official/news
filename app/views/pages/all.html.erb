@@ -4,34 +4,36 @@
  </div>
  
  <div class="container content-article col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<div class="news-article">
+	<div class="article-title">
 		<h3>Новости</h3>
-		<a href="#"><span>more news</span></a>
+		<%=link_to "more", articles_path%>
 	</div>
-	<%= 9.times do%>
-		<div class="article">
-			<%=image_tag"bleat.png", :alt=>"Foto", :class=>"news-img"%>
-			<a href="#"><p>Идейные соображения высшего порядка, а также консультация с широким активом</p></a>
-		</div>
-	<%end%>
+			<% @articles.each do |article|%>
+				<div class="article col-xs-6 col-sm-4 col-md-4 col-lg-4">
+				<div class="article-img col-xs-4 col-sm-4 col-md-4 col-lg-4"><%=image_tag article.thumb, :alt=>"Foto"%></div>
+				<div class="article-text col-xs-8 col-sm-8 col-md-8 col-lg-8"> <span><%= article.news%></span> </div>
+				</div>
+			<%end%>
 </div>
-<div class="content-page row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<div class="page-sidebar col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<div class="interview"> Опрос</div>
-		<div class="cloud-tag">Облако тегов</div>
-		
-	</div>
+<div class="content-page container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="page col-xs-8 col-sm-8 col-md-8 col-lg-8">
 	   <div class="article-title">
 			<h3>Статьи</h3>
 			<%=link_to "more", pages_path%>
 		</div>
-		
-			<% @pages.each do |page|%>
-				<div class="page-preview">
-				<%=image_tag page.thumb, :alt=>"Foto", :class=>"page-img"%>
-				<a href="<%= page_path(id: page.id)%>"><span><%= page.header%></span></a>
+					<% @pages.each do |page|%>
+				<div class="page-preview col-xs-12 col-sm-6 col-md-6 col-lg-6">
+									
+				<div class="page-text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<a href="<%= page_path(id: page.id)%>"><span><%= page.header%></span></a>
+					</div>
+				<%=image_tag page.thumb, :alt=>"Foto"%>
 				</div>
 			<%end%>
+	</div>
+	<div class="page-sidebar col-xs-8 col-sm-4 col-md-4 col-lg-4">
+		<div class="interview "> Опрос</div>
+		<div class="cloud-tag">Облако тегов</div>
+		
 	</div>
 </div>
