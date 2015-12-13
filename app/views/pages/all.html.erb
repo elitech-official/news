@@ -10,30 +10,34 @@
 	</div>
 			<% @articles.each do |article|%>
 				<div class="article col-xs-6 col-sm-4 col-md-4 col-lg-4">
-				<div class="article-img col-xs-4 col-sm-4 col-md-4 col-lg-4"><%=image_tag article.thumb, :alt=>"Foto"%></div>
-				<div class="article-text col-xs-8 col-sm-8 col-md-8 col-lg-8"> <span><%= article.news%></span> </div>
+				<div class="article-img col-xs-12 col-sm-4 col-md-4 col-lg-4"><%=image_tag article.thumb, :alt=>"Foto"%></div>
+				<div class="article-text col-xs-12 col-sm-8 col-md-8 col-lg-8"> <span><%= article.news%></span> </div>
 				</div>
 			<%end%>
 </div>
 <div class="content-page container col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<div class="page col-xs-8 col-sm-8 col-md-8 col-lg-8">
+	<div class="page col-xs-12 col-sm-8 col-md-8 col-lg-8">
 	   <div class="article-title">
 			<h3>Статьи</h3>
 			<%=link_to "more", pages_path%>
 		</div>
 					<% @pages.each do |page|%>
-				<div class="page-preview col-xs-12 col-sm-6 col-md-6 col-lg-6">
-									
+				<div class="page-preview col-xs-12 col-sm-6 col-md-6 col-lg-6">				
 				<div class="page-text col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<a href="<%= page_path(id: page.id)%>"><span><%= page.header%></span></a>
+					<a href="<%= page_path(id: page.slug)%>"><span><%= page.header%></span></a>
 					</div>
 				<%=image_tag page.thumb, :alt=>"Foto"%>
 				</div>
 			<%end%>
 	</div>
-	<div class="page-sidebar col-xs-8 col-sm-4 col-md-4 col-lg-4">
+	<div class="page-sidebar col-xs-12 col-sm-4 col-md-4 col-lg-4">
 		<div class="interview "> Опрос</div>
-		<div class="cloud-tag">Облако тегов</div>
+		<div class="cloud-tag">
+			<span class="clouds"> Облако тэгов </span>
+			<% tag_cloud Page.tag_counts + Article.tag_counts, %w[s m l] do |tag, css_class| %>
+		      <%= link_to tag.name, tag_path(tag: tag.name), class: css_class %>
+		    <% end %>
+		</div>
 		
 	</div>
 </div>

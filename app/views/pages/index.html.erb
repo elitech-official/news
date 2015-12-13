@@ -1,3 +1,31 @@
-<%@pages.each do |page| %>
-	<%= render partial: "page_short", locals: {page: page}%>
-<%end%>
+<div class= "index container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="pages-found col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<% if @pages.nil?%>
+		  <span class="no-pages-found"> <i> Извините, по вашему запросу не найдено ни одной статьи...  </i> </span>
+		<% else %>
+		<span class="no-pages-found"> <i> Статьи: найдено <%= @pages.count %>  </i> </span>
+			<% @pages.each do |page|%>
+				<div class="page-preview col-xs-12 col-sm-12 col-md-12 col-lg-12">				
+				<div class="page-text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<a href="<%= page_path(id: page.slug)%>"><span><%= page.header%></span></a>
+					</div>
+				<%=image_tag page.thumb, :alt=>"Foto"%>
+				</div>
+			<% end %>
+		<% end %>
+		
+	</div>
+	<div class="articles-found col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<% if @articles.nil?%>
+		  <span class="no-pages-found"> Извините, по вашему запросу не найдено ни одной новости... </span>
+		<% else %>
+		<span class="no-pages-found"> Новости: найдено <%= @articles.count %> </span>
+		 <% @articles.each do |article|%>
+				<div class="article col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="article-img col-xs-12 col-sm-4 col-md-4 col-lg-4"><%=image_tag article.thumb, :alt=>"Foto"%></div>
+				<div class="article-text col-xs-12 col-sm-8 col-md-8 col-lg-8"> <span><%= article.news%></span> </div>
+				</div>
+			<%end%>
+		<% end %>
+	</div>
+</div>

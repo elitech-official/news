@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   end
   resources :articles
   resources :admin_users
-  get '/tags/:tag', to: 'pages#index', as: :tag 
+  get '/tags/:tag', to: 'pages#index', as: :tag
+  get '/who-are-we', to: 'pages#who', as: :abous_us
   get 'pages/author/:id', to: "pages#author", as: :author
   get 'pages/all', to: 'pages#all', as: :all
   root to: 'pages#all'

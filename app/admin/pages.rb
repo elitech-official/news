@@ -1,6 +1,6 @@
 ActiveAdmin.register Page do
   
-  permit_params :header, :body, :main, :theme, :category, :tag_list, :thumb, :admin_user_ids => []
+  permit_params :header, :body, :main, :theme, :category, :preview, :tag_list, :thumb, :admin_user_ids => []
   
   actions :all
   
@@ -37,7 +37,7 @@ ActiveAdmin.register Page do
     
     private
     def page_params
-      params.require(:page).permit(:header, :body, :theme, :tag_list, :thumb, :category, :main, :admin_user_ids =>[])
+      params.require(:page).permit(:header, :body, :theme, :tag_list, :thumb, :category, :preview, :main, :admin_user_ids =>[])
     end
   end
   
@@ -45,6 +45,7 @@ ActiveAdmin.register Page do
    f.inputs "Заголовок статьи" do
      f.input :header, :label => "Заголовок"
      f.input :thumb, :required => false, :as => :file, :label => "Изображения для заголовка"
+     f.input :preview, :label => "Краткое содержание"
      f.label "На главную ?"
      f.check_box :main
    end

@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       @articles = Article.where(theme: params[:theme])
     elsif params[:tag]
       @pages = Page.tagged_with(params[:tag])
-      @article = Page.tagged_with(params[:tag])
+      @articles = Article.tagged_with(params[:tag])
     else
       @pages = Page.all
       @articles = Article.all
@@ -22,7 +22,7 @@ class PagesController < ApplicationController
   
    def all
     @pages = Page.last(6)
-    @news = Article.last(9)
+    @articles = Article.last(9)
   end
   
   def author

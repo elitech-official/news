@@ -40,9 +40,32 @@
   min-height:300px;
 }
 
+.clouds{
+  width: 100%;
+  display: block;
+  font-size: 1.2vw;
+  color: black;
+  margin: 15px 0 15px 0;
+  text-align: right;
+}
+
+.cloud-tag {
+  line-height: 1.6em;
+    & a{
+      color: #A9A9A9;
+      text-decoration: none;
+    }
+   & .s { font-size: 0.8vw; }
+   & .m { font-size: 1.2vw; }
+   & .l { font-size: 1.0vw; }
+   & *:hover{
+     text-decoration: none;
+     color: black;
+   }
+}
+
 .content-article{
   border-top:2px solid #9E78FF;
-  background: #F5F5F5;
   padding-right: 25px;
   & .article-title{
     min-height: 30px;
@@ -58,23 +81,24 @@
       font-size:1.4vw;
       }
   }
-  & .article{
+}
+
+.article{
     max-height: 175px;
     font-size: 1.2vw;
-    margin-bottom: 5px;
+    margin: 10px 0 10px 0;
     & .article-img{
-      margin-top: 10px;
-      height: 100px;
-      width: 100;
+      margin: 10px 0 10px 0;
       & img{
-        width:100%;
-        min-height:50px;
-        min-width:auto;
+        max-height: 300px;
+        width: 100%;
+        min-height: 50px;
       }
     }
     & .article-text{
        max-height:100px;
        overflow: hidden;
+       margin-top: 10px;
        & a{
          text-decoration:none;
          color:#000;
@@ -82,10 +106,8 @@
     }
 
   }
-}
 
 .content-page{
-  background: #F5F5F5;
   min-height:150px;
    & .page-sidebar{
     & .interview{
@@ -95,12 +117,13 @@
     }
     & .cloud-tag{
       min-height:130px;
-      border:1px solid #000;
+      margin-top: 30px;
+      border-top: 1px solid black;
     }
   }
   & .page{
     border-top:2px solid #9E78FF;
-     padding-right: 0px;
+     padding: 0px;
       & .article-title{
        min-height: 30px;
        min-width: 170px;
@@ -113,16 +136,22 @@
       color:#000;
       font-size:1.4vw;}
     }
-    & .page-preview{
-      min-height:100px;
-      margin:5px;
+  }
+}
 
+.page-preview{
+      min-height: 100px;
+      margin-bottom: 30px;
       & img{
-        height: 200px;
+        max-height: 300px;
         width: 100%;
+        min-height: 100px;
       }
       & .page-text{
-        height: 200px; 
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
         margin-bottom:-200px;
         line-height:200px;
         opacity: 0;
@@ -131,6 +160,11 @@
         & a{
           text-decoration:none;
           & span{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            line-height: 100%;
+            width: 100%;
             font-size:1.6vw;
             color: #FFFFFF;
           }
@@ -138,8 +172,6 @@
          }
       
     }
-  }
-}
 
 .article:hover{
   box-shadow: 0px 0px 5px 2px #7569F5;
@@ -155,15 +187,19 @@
 
                             /*-------CONTENT-SHOW-------*/
 
+.show-keywords{
+  margin: 20px 0 10px 0;
+}
+
 .about-author{
   margin-top: 10px;
   padding: 0;
   & .author-item{
     min-height: 180px;
-    background-color: #F5F5DC;
     margin: 10px 0 0 0;
     padding: 0;
     border-top: 1px solid black;
+    background-color: #D9EDF7;
     & .author-about-me{
       margin-top: 15px;
       & span{
@@ -181,10 +217,12 @@
       }
     }
     & .author-about-face{
-      margin-top: 15px;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      text-align: center;
       & img{
-        height: 150px;
-        width: 150px;
+        height: 100px;
+        width: 100px;
         border-radius: 50%;
       }
     }
@@ -205,18 +243,36 @@
          & .page-show-head{
            min-height: 300px;
            margin-bottom: 10px;
+           padding: 0;
+           & .page-show-preview{
+             text-align: left;
+             padding: 0;
+             & span{
+               padding: 5px 10px 5px 10px;
+               display: block;
+               margin: 15px 0 15px 0;
+               font-size: 1vw;
+               background-color: #D9EDF7;
+               color: black;
+             }
+           }
+           & .fixt{
+             padding: 0;
+           }
            & div{
              & span{
-               display: block;
-               width: 100%;
              }
              & .page-show-header{
                font-size: 2vw;
                color: black;
+               display: block;
+               width: 100%;
+               margin: 0 0 20px 0;
                text-align: left;
              }
              & .page-show-text{
                font-size: .7vw;
+               margin: 10px 0 10px 0;
                color: #C0C0C0;
              }
              & img{
@@ -234,26 +290,12 @@
              float: left;
              margin: 10px;
            }
-          }
-       & .page-set{
-         margin-bottom: 5px;
-          & .page-author{
-            float: right;
-            color: #008B8B;
-            font-size: 1vw;
-          }
-          & .pg-time{
-            float: left;
-            color: #C0C0C0;
-            font-size: 1vw;
-          }
-          }
+          } 
        }
        & .page-info{
        min-height:150px;
        padding-top: 10px;
        border-top: 1px solid black;
-       
         }
        & .about-autor{
         min-height:80px;
@@ -309,7 +351,10 @@
         } 
       }
      & .read-more{
-       margin-top: 15px;
+       & h4{
+         margin: 10px 0 10px 0;
+         border-bottom: 1px solid black;
+       }
      & a{
        text-decoration:none;
        margin:5px;
@@ -324,7 +369,6 @@
    }
   } 
   & .comment{
-        background:#BAB6B6;
         min-height:80px;
         & textarea{
           resize:none;
@@ -340,19 +384,45 @@
                         
  }                 
  
+ .page-set{
+         margin-bottom: 10px;
+         text-align: left;
+         padding: 0;
+         & span{
+           margin: 0 10px 0 0;
+         }
+          & .page-author{
+            color: #008B8B;
+            font-size: 1vw;
+          }
+          & .pg-time{
+            color: #C0C0C0;
+            font-size: 1vw;
+          }
+          & .page-categories{
+            font-size: 1vw;
+          }
+          }
+ 
  .page-recent{
-   backkground-color: white;
-   border: 1px solid black;
-   padding: 10px 5px 10px 0;
-     & .page-recent-header{
-       color: black;
-       font-size: 1vw;
-       font-weight: 600;
-     }
-     & .page-recent-text{
-       color: #C0C0C0;
+   & .page-recent-image{
+     padding-left: 0px;
+   }
+   & .page-recent-text{
+       color: #A9A9A9;
        font-size: .7vw;
        font-weight: 400;
+       display: block;
+       padding-left: 10px;
+     }
+   background-color: white;
+   border-bottom: 1px solid black;
+   padding: 10px 5px 10px 0;
+     & .page-recent-header{
+       color: #404040;
+       font-size: .7vw;
+       font-weight: 600;
+       display: block;
      }
      & .preview-recent-image{
        max-height: 100px;
@@ -407,3 +477,18 @@
      }
     }
    }
+   
+//---------------------------- INDEX -----------------------------//
+
+.index.container{
+  margin-top: 20px;
+}
+
+.no-pages-found{
+    color: #A9A9A9;
+    font-size: 1.5vw;
+  }
+
+.pages-found{
+  border-right: 1px solid black;
+}
