@@ -114,7 +114,7 @@
     & .article-img{
       margin: 10px 0 10px 0;
       & img{
-        max-height: 300px;
+        max-height: 130px;
         width: 100%;
         min-height: 50px;
       }
@@ -165,7 +165,7 @@
       min-height: 100px;
       margin-bottom: 30px;
       & img{
-        max-height: 300px;
+        max-height: 100px;
         width: 100%;
         min-height: 100px;
       }
@@ -187,7 +187,7 @@
             left: 0;
             line-height: 100%;
             width: 100%;
-            font-size:1.6vw;
+            font-size:0.7vw;
             color: #FFFFFF;
           }
         }
@@ -258,8 +258,10 @@
       margin-bottom: 15px;
       text-align: center;
       & img{
-        height: 200px;
-        width: 200px;
+        min-height: 120px;
+        min-width: 120px;
+        max-height: 130px;
+        max-width: 130px;
         border-radius: 50%;
       }
     }
@@ -742,4 +744,196 @@
       }
     }
   }
+}
+
+
+                                 //---------MEDIA------------//
+                                 
+@media all and (max-width: 420px){
+  
+ .article-title{
+    & a{font-size:3.5vw;}
+  }
+  
+ .article-text{
+    & span{font-size:3vw;}
+  }
+  
+.cloud-tag{
+  & .clouds{font-size:3.5vw;}
+  & .l {font-size:4.5vw; }
+}  
+ .no-pages-found{
+   & i{font-size:4.5vw;}
+ }
+ .index-page-preheader{
+   & a{font-size:4vw;text-align: center;}
+ }
+ .index-page-predate{
+   text-align:center;
+   font-size:3.7vw;
+ }
+ .index-page-preauthor{
+   text-align:center;
+   font-size:3.7vw;
+ }
+ .about-author-name{font-size:4.5vw;}
+ 
+ .author-link{font-size:3.2vw;}
+ 
+ .about-author-info{
+   & i{font-size:3.9vw;}
+ }
+ 
+ .who-header{
+   & h2{font-size:5vw;}
+ }
+ 
+ .coolstory{
+   & p{font-size:3.8vw;}
+   & a{font-size:4vw;}
+ }
+ 
+ .occupy{
+   & span{font-size:4vw !important;}
+ }
+ .page-show-header{font-size: 4.5vw !important;}
+ .page-categories{font-size: 3.5vw !important;}
+ .pg-time{font-size: 3.5vw !important;}
+ .page-author{font-size: 3.5vw !important;}
+ 
+ 
+ .page-recent-header{font-size: 3.7vw !important;}
+ .recent-author-name {font-size: 3vw !important;}
+ .recent-date{font-size: 3vw !important;}
+ .page-recent-text{display:none !important;}
+ .page-show-preview{
+   & span{font-size: 3vw !important;}
+ }
+ 
+}
+
+
+@media all and (min-width: 421px) and (max-width: 768px){
+  .article-title{
+    & a{font-size:2vw;}
+  }
+  
+ .article-text{
+    & span{font-size:2vw;}
+  }
+  
+.cloud-tag{
+  & .clouds{font-size:2.8vw;}
+  & .l {font-size:2.8vw; }
+}  
+ .no-pages-found{
+   & i{font-size:2.5vw;}
+ }
+ .index-page-preheader{
+   & a{font-size:2.2vw;text-align: center;}
+ }
+ .index-page-predate{
+   text-align:center;
+   font-size:2vw;
+ }
+ .index-page-preauthor{
+   text-align:center;
+   font-size:2vw;
+ }
+ .about-author-name{font-size:2.5vw;}
+ 
+ .author-link{font-size:2.5vw;}
+ 
+ .about-author-info{
+   & i{font-size:2.1vw;}
+ }
+ 
+ .who-header{
+   & h2{font-size:2.5vw;}
+ }
+ 
+ .coolstory{
+   & p{font-size:2.5vw;}
+   & a{font-size:2.5vw;}
+ }
+ 
+ .occupy{
+   & span{font-size:4vw !important;}
+ }
+ .page-show-header{font-size: 3.2vw !important;}
+ .page-categories{font-size: 2vw !important;}
+ .pg-time{font-size: 2vw !important;}
+ .page-author{font-size: 2vw !important;}
+ 
+ 
+ .page-recent-header{font-size: 2.5vw !important;}
+ .recent-author-name {font-size: 2vw !important;}
+ .recent-date{font-size: 2vw !important;}
+ .page-recent-text{font-size:2vw !important;}
+ .page-show-preview{
+   & span{font-size: 2vw !important;}
+ }
+}
+
+@media all and (min-width: 768px) and (max-width: 1280px){
+  .article-title{
+    & a{font-size:1.2vw;}
+  }
+  
+ .article-text{
+    & span{font-size:1.2vw;}
+  }
+  
+.cloud-tag{
+  & .clouds{font-size:2.1vw;}
+  & .l {font-size:1.5vw; }
+}  
+ .no-pages-found{
+   & i{font-size:2.5vw;}
+ }
+ .index-page-preheader{
+   & a{font-size:2.2vw;text-align: center;}
+ }
+ .index-page-predate{
+   text-align:center;
+   font-size:2vw;
+ }
+ .index-page-preauthor{
+   text-align:center;
+   font-size:2vw;
+ }
+ .about-author-name{font-size:1.8vw;}
+ 
+ .author-link{font-size:2.5vw;}
+ 
+ .about-author-info{
+   & i{font-size:1.8vw;}
+ }
+ 
+ .who-header{
+   & h2{font-size:2vw;}
+ }
+ 
+ .coolstory{
+   & p{font-size:1.6vw;}
+   & a{font-size:1.6vw;}
+ }
+ 
+ .occupy{
+   & span{font-size:2.1vw !important;}
+ }
+ .page-show-header{font-size: 3.2vw !important;}
+ .page-categories{font-size: 2vw !important;}
+ .pg-time{font-size: 2vw !important;}
+ .page-author{font-size: 2vw !important;}
+ 
+ 
+ .page-recent-header{font-size: 2.5vw !important;}
+ .recent-author-name {font-size: 2vw !important;}
+ .recent-date{font-size: 2vw !important;}
+ .page-recent-text{font-size:2vw !important;}
+ .page-show-preview{
+   & span{font-size: 2vw !important;}
+ }  
 }
