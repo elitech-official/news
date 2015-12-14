@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20151213145707) do
   create_table "comments", force: :cascade do |t|
     t.text     "text",             limit: 65535
     t.integer  "commentable_id",   limit: 4
-    t.string   "commentable_type", limit: 255
-    t.string   "ancestry",         limit: 255
+    t.string   "commentable_type", limit: 191
+    t.string   "ancestry",         limit: 191
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "name",             limit: 191
