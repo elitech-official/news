@@ -26,17 +26,24 @@
     }
   }
   & .header-logo{
-     background: image-url('header.jpeg');
-     background-size: 100% 100%;  
-     background-repeat: no-repeat;
-    height:228px;
-       & a{ 
-     float:left;
-     }
-    & h2{
-      font-size:24px;
-      text-align:center;
-    }
+    background:#0093dd;
+     //background: image-url('header.jpeg');
+    // background-size: 100% 100%;  
+   //  background-repeat: no-repeat;
+  //  height:228px;
+     & .karazina{
+       background: image-url('karazina.jpeg');
+       background-size: 100% 100%;  
+       background-repeat: no-repeat;
+       height:228px;
+       float:left;
+       }
+     & .pulse{
+       background: image-url('pulse.jpeg');
+       background-size: 100% 100%;  
+       background-repeat: no-repeat;
+       height:228px;
+       }
   }
 }
 
@@ -750,7 +757,7 @@
                                  //---------MEDIA------------//
                                  
 @media all and (max-width: 420px){
-  
+  .karazina{display:none;}
  .article-title{
     & a{font-size:3.5vw;}
   }
@@ -815,6 +822,7 @@
 
 
 @media all and (min-width: 421px) and (max-width: 768px){
+  .karazina{display:none;}
   .article-title{
     & a{font-size:2vw;}
   }
@@ -903,12 +911,12 @@
    text-align:center;
    font-size:2vw;
  }
- .about-author-name{font-size:1.8vw;}
+ .about-author-name{font-size:1.5vw;}
  
- .author-link{font-size:2.5vw;}
+ .author-link{font-size:1.5vw;}
  
  .about-author-info{
-   & i{font-size:1.8vw;}
+   & i{font-size:1.5vw;}
  }
  
  .who-header{
@@ -923,17 +931,13 @@
  .occupy{
    & span{font-size:2.1vw !important;}
  }
- .page-show-header{font-size: 3.2vw !important;}
- .page-categories{font-size: 2vw !important;}
- .pg-time{font-size: 2vw !important;}
- .page-author{font-size: 2vw !important;}
+
  
- 
- .page-recent-header{font-size: 2.5vw !important;}
- .recent-author-name {font-size: 2vw !important;}
- .recent-date{font-size: 2vw !important;}
- .page-recent-text{font-size:2vw !important;}
+ .page-recent-header{font-size: 1.2vw !important;}
+ .recent-author-name {font-size: 1vw !important;}
+ .recent-date{font-size: 1vw !important;}
+ .page-recent-text{font-size:1.2vw !important;}
  .page-show-preview{
-   & span{font-size: 2vw !important;}
+   & span{font-size: 1.2vw !important;}
  }  
 }
