@@ -26,17 +26,24 @@
     }
   }
   & .header-logo{
-     background: image-url('header.jpeg');
-     background-size: 100% 100%;  
-     background-repeat: no-repeat;
-    height:228px;
-       & a{ 
-     float:left;
-     }
-    & h2{
-      font-size:24px;
-      text-align:center;
-    }
+    background:#0093dd;
+     //background: image-url('header.jpeg');
+    // background-size: 100% 100%;  
+   //  background-repeat: no-repeat;
+  //  height:228px;
+     & .karazina{
+       background: image-url('karazina.jpeg');
+       background-size: 100% 100%;  
+       background-repeat: no-repeat;
+       height:228px;
+       float:left;
+       }
+     & .pulse{
+       background: image-url('pulse.jpeg');
+       background-size: 100% 100%;  
+       background-repeat: no-repeat;
+       height:228px;
+       }
   }
 }
 
@@ -55,7 +62,7 @@
   width: 100%;
   display: block;
   font-size: 1.2vw;
-  color: black;
+  color: #333;
   margin: 15px 0 15px 0;
   text-align: left;
 }
@@ -63,7 +70,7 @@
 .cloud-tag {
   line-height: 1.6em;
     & a{
-      color: #A9A9A9;
+      color: #333;
       text-decoration: none;
     }
    & .s { font-size: 0.8vw; }
@@ -71,13 +78,13 @@
    & .l { font-size: 1.0vw; }
    & *:hover{
      text-decoration: none;
-     color: black;
+     color: #333;
    }
 }
 
 .content-article{
   & .article-title{
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #333;
       margin: 10px 0 10px 0;
   }
 
@@ -98,10 +105,10 @@
      }
     & a{
       text-decoration: none;
-      color:#000;
+      color:#333;
       font-size:1.2vw;
       &:hover{
-        color: #008B8B;
+        color: #333;
         text-decoration: none;
       }
       }
@@ -125,7 +132,7 @@
        margin-top: 10px;
        & a{
          text-decoration:none;
-         color:#000;
+         color:#333;
        }
     }
 
@@ -136,18 +143,18 @@
    & .page-sidebar{
     & .interview{
       min-height:130px;
-      border:1px solid #000;
+      border:1px solid #333;
       margin-bottom:5px;
     }
     & .cloud-tag{
       min-height:130px;
       margin-top: 30px;
-      border-top: 1px solid black;
+      border-top: 1px solid #333;
     }
   }
   & .page{
     & .article-title{
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid #333;
           margin-bottom: 15px;
           & h3{
             margin-top: 0;
@@ -213,7 +220,7 @@
   margin: 20px 0 10px 0;
   & a{
     &:hover{
-      color: black;
+      color: #333;
       text-decoration: none;
       transition: .5s ease;
     }
@@ -230,7 +237,7 @@
   font-size: 1.5vw;
   &:hover{
     text-decoration: none;
-    color: black;
+    color: #333;
     transition: .5s ease;
   }
 }
@@ -238,8 +245,8 @@
     min-height: 180px;
     margin: 10px 0 0 0;
     padding: 0;
-    border-top: 1px dotted black;
-    background-color: #D9EDF7;
+    border-top: 1px dotted #333;
+    background-color: #8ebdd5;
     & .author-about-me{
       margin-top: 15px;
       & span{
@@ -249,7 +256,7 @@
       }
       & .about-author-info{
         padding-left: 10px;
-        color: #808080;
+        color: #333;
         font-size: 1.3vw;
       }
     }
@@ -268,7 +275,7 @@
   }
 .about-author-name{
         font-size: 1.5vw;
-        color: black;
+        color: #333;
       }
 
  .page-wapper{                   
@@ -292,8 +299,8 @@
                display: block;
                margin: 15px 0 15px 0;
                font-size: 1vw;
-               background-color: #D9EDF7;
-               color: black;
+               background-color: #8ebdd5;
+               color: #333;
              }
            }
            & .fixt{
@@ -304,7 +311,7 @@
              }
              & .page-show-header{
                font-size: 2vw;
-               color: black;
+               color: #333;
                display: block;
                width: 100%;
                margin: 0 0 20px 0;
@@ -313,7 +320,7 @@
              & .page-show-text{
                font-size: .7vw;
                margin: 10px 0 10px 0;
-               color: #C0C0C0;
+               color: #333;
              }
              & img{
                max-height: 300px;
@@ -335,7 +342,7 @@
        & .page-info{
        min-height:150px;
        padding-top: 10px;
-       border-top: 1px solid black;
+       border-top: 1px solid #333;
         }
        & .about-autor{
         min-height:80px;
@@ -372,14 +379,14 @@
            & .comment-text{
              display: block;
              font-size: .8vw;
-             font-color: black;
+             font-color: #333;
            }
            & span{
              font-size: .7vw;
-             color: #A9A9A9;
+             color: #333;
            }
            & .comment-name{
-             color: black;
+             color: #333;
              font-weight: 600;
              
            }
@@ -393,7 +400,7 @@
      & .read-more{
        & h4{
          margin: 10px 0 10px 0;
-         border-bottom: 1px solid black;
+         border-bottom: 1px solid #333;
        }
      & a{
        text-decoration:none;
@@ -430,7 +437,7 @@
          & a{
            text-decoration: none;
            &:hover{
-            color: black;
+            color: #333;
             text-decoration: none;
             transition: .5s ease;
           }
@@ -439,11 +446,11 @@
            margin: 0 10px 0 0;
          }
           & .page-author{
-            color: #008B8B;
+            color: #333;
             font-size: 1vw;
           }
           & .pg-time{
-            color: #C0C0C0;
+            color: #333;
             font-size: 1vw;
           }
           & .page-categories{
@@ -456,17 +463,17 @@
      padding-left: 0px;
    }
    & .page-recent-text{
-       color: #A9A9A9;
+       color: #333;
        font-size: .7vw;
        font-weight: 400;
        display: block;
        padding-left: 10px;
      }
    background-color: white;
-   border-bottom: 1px solid black;
+   border-bottom: 1px solid #333;
    padding: 10px 5px 10px 0;
      & .page-recent-header{
-       color: #404040;
+       color: #333;
        font-size: .7vw;
        font-weight: 600;
        display: block;
@@ -483,12 +490,12 @@
          text-align: left;
          & .recent-author-name{
            float: left;
-           color: #008B8B;
+           color: #333;
            font-size: .7vw;
            & a{
              text-decoration: none;
              &:hover{
-      color: black;
+      color: #333;
       text-decoration: none;
       transition: .5s ease;
     }
@@ -504,7 +511,8 @@
  
                                 /*-------FOOTER-------*/
 .footer-wrapper{
-  border-top: 1px dotted #A9A9A9;
+  background:#a39f9f;
+  border-top: 1px dotted #333;
   padding-top: 10px;
   margin-top: 20px;                       
   & .footer {  
@@ -531,11 +539,11 @@
    }
 
 .footer-socials{
-  border-left: 1px dotted #A9A9A9;
+  border-left: 1px dotted #333;
   & a{
     &:hover{
       text-decoration: none;
-      color: black;
+      color: #333;
       transition: 1s ease;
     }
   }
@@ -549,12 +557,12 @@
   & .article{
     margin-top: 0px;
     margin-bottom: 10px;
-    border-top: 1px solid black;
+    border-top: 1px solid #333;
   }
 }
 
 .no-pages-found{
-    color: #A9A9A9;
+    color: #333;
     font-size: 1.5vw;
     margin-bottom: 20px;
     display: block;
@@ -563,7 +571,7 @@
 .index-page-preheader{
   & a{
     font-weight: 600;
-    color: #202020;
+    color: #333;
     margin: 10px 0 10px 0;
     font-size: 1.2vw;
     text-decoration: none;
@@ -579,11 +587,11 @@
 
 .index-page-preauthor{
   font-size: .7vw;
-  color: #808080;
+  color: #333;
   & a{
     text-decoration: none;
     &:hover{
-      color: black;
+      color: #333;
       text-decoration: none;
       transition: .5s ease;
     }
@@ -591,7 +599,7 @@
 }
 
 .pages-found{
-  border-right: 1px solid black;
+  border-right: 1px solid #333;
 }
 
 .spacer{
@@ -612,7 +620,7 @@
       display: inline-block;
       margin: 0 20px 0 0;
       font-size: 24px;
-      color: black;
+      color: #333;
       & a{
         margin: 0 auto;
         display: block;
@@ -623,7 +631,7 @@
           transition: .5s ease;
         }
         &:hover > i{
-          color: white;
+          color: #333;
           transition: .5s ease;
         }
       }
@@ -638,7 +646,7 @@
   margin-top: 25px;
   margin-bottom: 25px;
   & .author.container{
-    background-color: #D9EDF7;
+    background-color: #8ebdd5;
   }
   & .author-item{
   }
@@ -656,7 +664,7 @@
             line-height: 100%;
             width: 100%;
             font-size:1.6vw;
-            color: #FFFFFF;
+            color: #333;
           }
       }
    }
@@ -704,21 +712,21 @@
     padding: 15px 0 15px 0;
     width: 100%;
     background-color: #D0D0D0;
-    color: black;
+    color: #333;
     font-size: 2.3vw;
   }
   & p{
     font-size: 1vw;
-    color: #808080;
+    color: #333;
     letter-spacing: 2px;
   }
   & a{
     display: block;
-    color: #337AB7;
+    color: #333;
     font-size: 1vw;
     float: right;
     &:hover{
-      color: black;
+      color: #333;
       text-decoration: none;
       transition: .5s ease;
     }
@@ -750,7 +758,7 @@
                                  //---------MEDIA------------//
                                  
 @media all and (max-width: 420px){
-  
+  .karazina{display:none;}
  .article-title{
     & a{font-size:3.5vw;}
   }
@@ -815,6 +823,7 @@
 
 
 @media all and (min-width: 421px) and (max-width: 768px){
+  .karazina{display:none;}
   .article-title{
     & a{font-size:2vw;}
   }
@@ -903,12 +912,12 @@
    text-align:center;
    font-size:2vw;
  }
- .about-author-name{font-size:1.8vw;}
+ .about-author-name{font-size:1.5vw;}
  
- .author-link{font-size:2.5vw;}
+ .author-link{font-size:1.5vw;}
  
  .about-author-info{
-   & i{font-size:1.8vw;}
+   & i{font-size:1.5vw;}
  }
  
  .who-header{
@@ -923,17 +932,13 @@
  .occupy{
    & span{font-size:2.1vw !important;}
  }
- .page-show-header{font-size: 3.2vw !important;}
- .page-categories{font-size: 2vw !important;}
- .pg-time{font-size: 2vw !important;}
- .page-author{font-size: 2vw !important;}
+
  
- 
- .page-recent-header{font-size: 2.5vw !important;}
- .recent-author-name {font-size: 2vw !important;}
- .recent-date{font-size: 2vw !important;}
- .page-recent-text{font-size:2vw !important;}
+ .page-recent-header{font-size: 1.2vw !important;}
+ .recent-author-name {font-size: 1vw !important;}
+ .recent-date{font-size: 1vw !important;}
+ .page-recent-text{font-size:1.2vw !important;}
  .page-show-preview{
-   & span{font-size: 2vw !important;}
+   & span{font-size: 1.2vw !important;}
  }  
 }
