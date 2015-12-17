@@ -2,7 +2,10 @@
   <div id="wrapper">
 	<div id="carousel">
 		<% @main_pages.each do |page|%>
+				<div class="caro-item">
 				<%= image_tag page.thumb, :alt=>"Foto"%>
+				<a href="<%= page_path(id: page.slug)%>" class="header-link"><span class="caro-header"><%= page.header %></a> </span>
+				</div>
 		<% end %>
 	</div>
 </div>
@@ -77,7 +80,7 @@
     	$('#carousel').carouFredSel({
     		direction: _direction,
     		responsive: true,
-    		circular: false,
+    		circular: true,
     		items: {
     			width: 1200,
     			height: 'auto',
