@@ -22,7 +22,7 @@ class Users::OmniauthCallbacksController < ApplicationController
   end
   
   def user_params
-      params.require(:user).permit(:username, :nickname, :provider, :url)
+      params.require(:user).permit( :username, :nickname, :provider, :url, :password, :email, :password_confirmation, :remember_me)
     end
   
 end
