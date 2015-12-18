@@ -20,9 +20,4 @@ class Users::OmniauthCallbacksController < ApplicationController
       redirect_to root_path
     end
   end
-  
-  def user_params
-      params.require(:user).permit( :username, :nickname, :provider, :url, :password, :email, :password_confirmation, :remember_me)
-    end
-  
 end

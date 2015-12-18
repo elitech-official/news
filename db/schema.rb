@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151218050113) do
+ActiveRecord::Schema.define(version: 20151218100214) do
 
   create_table "active_admin_comments", force: :cascade do |t|
-    t.string   "namespace",     limit: 255
+    t.string   "namespace",     limit: 191
     t.text     "body",          limit: 65535
-    t.string   "resource_id",   limit: 255,   null: false
-    t.string   "resource_type", limit: 255,   null: false
+    t.string   "resource_id",   limit: 191,   null: false
+    t.string   "resource_type", limit: 191,   null: false
     t.integer  "author_id",     limit: 4
-    t.string   "author_type",   limit: 255
+    t.string   "author_type",   limit: 191
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,21 +29,21 @@ ActiveRecord::Schema.define(version: 20151218050113) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "admin_users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  limit: 191, default: "", null: false
+    t.string   "encrypted_password",     limit: 191, default: "", null: false
+    t.string   "reset_password_token",   limit: 191
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip",     limit: 191
+    t.string   "last_sign_in_ip",        limit: 191
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.string   "name",                   limit: 255
-    t.string   "avatar_file_name",       limit: 255
-    t.string   "avatar_content_type",    limit: 255
+    t.string   "name",                   limit: 191
+    t.string   "avatar_file_name",       limit: 191
+    t.string   "avatar_content_type",    limit: 191
     t.integer  "avatar_file_size",       limit: 4
     t.datetime "avatar_updated_at"
     t.string   "info",                   limit: 191
@@ -59,19 +59,19 @@ ActiveRecord::Schema.define(version: 20151218050113) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "articles", force: :cascade do |t|
-    t.string   "thumb_file_name",    limit: 255
-    t.string   "thumb_content_type", limit: 255
+    t.string   "thumb_file_name",    limit: 191
+    t.string   "thumb_content_type", limit: 191
     t.integer  "thumb_file_size",    limit: 4
     t.datetime "thumb_updated_at"
-    t.string   "news",               limit: 255
+    t.string   "news",               limit: 191
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "admin_user_id",      limit: 4
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
-    t.string   "data_file_name",    limit: 255, null: false
-    t.string   "data_content_type", limit: 255
+    t.string   "data_file_name",    limit: 191, null: false
+    t.string   "data_content_type", limit: 191
     t.integer  "data_file_size",    limit: 4
     t.integer  "assetable_id",      limit: 4
     t.string   "assetable_type",    limit: 30
@@ -88,25 +88,24 @@ ActiveRecord::Schema.define(version: 20151218050113) do
   create_table "comments", force: :cascade do |t|
     t.text     "text",             limit: 65535
     t.integer  "commentable_id",   limit: 4
-    t.string   "commentable_type", limit: 255
-    t.string   "ancestry",         limit: 255
+    t.string   "commentable_type", limit: 191
+    t.string   "ancestry",         limit: 191
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "name",             limit: 191
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string   "header",             limit: 255
+    t.string   "header",             limit: 191
     t.text     "body",               limit: 65535
     t.boolean  "main"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.string   "slug",               limit: 255
-    t.string   "author",             limit: 255
-    t.string   "theme",              limit: 255
-    t.string   "category",           limit: 255
-    t.string   "thumb_file_name",    limit: 255
-    t.string   "thumb_content_type", limit: 255
+    t.string   "slug",               limit: 191
+    t.string   "theme",              limit: 191
+    t.string   "category",           limit: 191
+    t.string   "thumb_file_name",    limit: 191
+    t.string   "thumb_content_type", limit: 191
     t.integer  "thumb_file_size",    limit: 4
     t.datetime "thumb_updated_at"
     t.string   "preview",            limit: 191
@@ -122,9 +121,9 @@ ActiveRecord::Schema.define(version: 20151218050113) do
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
     t.integer  "taggable_id",   limit: 4
-    t.string   "taggable_type", limit: 255
+    t.string   "taggable_type", limit: 191
     t.integer  "tagger_id",     limit: 4
-    t.string   "tagger_type",   limit: 255
+    t.string   "tagger_type",   limit: 191
     t.string   "context",       limit: 128
     t.datetime "created_at"
   end

@@ -20,12 +20,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: antip_test
+  database: news_test
   username: root
-  password: antip
+  password: default_password
 
 production:
   <<: *default
-  database: antip_production
+  database: news_production
   username: root
-  password: antip
+  password: default_password
