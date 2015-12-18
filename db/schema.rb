@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213145707) do
+ActiveRecord::Schema.define(version: 20151218050113) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20151213145707) do
   create_table "comments", force: :cascade do |t|
     t.text     "text",             limit: 65535
     t.integer  "commentable_id",   limit: 4
-    t.string   "commentable_type", limit: 191
-    t.string   "ancestry",         limit: 191
+    t.string   "commentable_type", limit: 255
+    t.string   "ancestry",         limit: 255
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "name",             limit: 191
@@ -138,5 +138,27 @@ ActiveRecord::Schema.define(version: 20151213145707) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username",               limit: 191
+    t.string   "nickname",               limit: 191
+    t.string   "provider",               limit: 191
+    t.string   "url",                    limit: 191
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "email",                  limit: 191, default: "", null: false
+    t.string   "encrypted_password",     limit: 191, default: "", null: false
+    t.string   "reset_password_token",   limit: 191
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 191
+    t.string   "last_sign_in_ip",        limit: 191
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

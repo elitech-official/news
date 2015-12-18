@@ -40,9 +40,13 @@ title="HotLog" alt="HotLog"></a>
 			</div>
 			<div class="partners col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<span class="text-foot">Наши партнёры: </span>
-				<a href="#"><img src="" alt="Партнер" /></a>
-				<a href="#"><img src="" alt="Партнер" /></a>
-				<a href="#"><img src="" alt="Партнер" /></a>
+				 <h3> Providers</h3>
+              <ul class="nav.nav-list">
+                <% if !user_signed_in? %>
+                  <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)%></li>
+                  <li><%= link_to "Sign in with Vkontakte", user_omniauth_authorize_path(:vkontakte)%></li>
+                  <% end %>
+              <ul>
 			</div>	
 		</div>
 	</div>
