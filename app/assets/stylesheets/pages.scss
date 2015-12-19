@@ -674,9 +674,8 @@
 
 .container.slider{
   height: inherit;
-  margin-top: 10px;
   min-height: 300px;
-  height: 600px;
+  margin-top: 10px;
   & #wrapper {
   width: 100%;
   position: absolute;
@@ -689,7 +688,17 @@
 }
   #carousel img {
   display: block;
+  max-height: 300px;
   float: left;
+}
+ 
+  #source {
+  text-align: center;
+  width: 400px;
+  margin: 0 0 0 -200px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
 }
 }
 
@@ -934,7 +943,6 @@
    & span{font-size: 1.2vw !important;}
  }  
 }
-
 .socials-module{
   margin: 10px 0 10px 0;
 }
@@ -952,6 +960,8 @@
   position: absolute;
   display: block;
   font-size: 32px;
+  height: 40px;
+  line-height: 40px;
   width: 100%;
   color: white;
   background-color: rgba(0,0,0,.3);

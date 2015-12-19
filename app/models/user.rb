@@ -1,19 +1,36 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
-
-  def self.find_for_facebook_oauth access_token
-    if user = User.where(:url => access_token.info.urls.Facebook).first
-      user
-    else 
-      User.create!(:provider => access_token.provider, :url => access_token.info.urls.Facebook, :username => access_token.extra.raw_info.name, :nickname => access_token.extra.raw_info.username, :email => access_token.extra.raw_info.email, :password => Devise.friendly_token[0,20]) 
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :vkontakte]
+         
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      if auth.provider == "vkontakte"
+      user.email = auth.extra.raw_info.id.to_s + "@vk.com"
+      elsif auth.provider == 'facebook'
+      user.email = auth.info.email
+      end
+      user.password = Devise.friendly_token[0,20]
+      user.name = auth.info.name   # assuming the user model has a name
+      user.image = auth.info.image # assuming the user model has an image
     end
   end
- def self.find_for_vkontakte_oauth access_token
-    if user = User.where(:url => access_token.info.urls.Vkontakte).first
-      user
-    else 
-      User.create!(:provider => access_token.provider, :url => access_token.info.urls.Vkontakte, :username => access_token.info.name, :nickname => access_token.extra.raw_info.domain, :email => access_token.extra.raw_info.domain+'<hh user=vk>.com', :password => Devise.friendly_token[0,20]) 
+  
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["facebook_data"] && session["facebook_data"]["extra"]["raw_info"]
+        user.email = session["facebook_data"]['email'] if user.email.blank?
+        user.password = Devise.friendly_token[0,20] if user.password.blank?
+        user.name = data['name']
+        user.save!
+      end
+      if !session["devise.vkontakte_data"].nil?
+        data = session["devise.vkontakte_data"]
+        user.email = data["email"] if user.email.blank?
+        user.password = Devise.friendly_token[0,20] if user.password.blank?
+        user.name = data['info']['name']
+      end
     end
   end
 end
