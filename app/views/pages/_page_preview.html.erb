@@ -13,7 +13,11 @@
 			<% end %>
 		</div>
 		<div class="recent-date col-xs-4 col-md-4 col-sm-4 col-lg-4">
-			<%= page.published_at.strftime("%d.%m.%Y")%>
+			<% if !page.published_at.nil? %>
+				<%= page.published_at.strftime("%d.%m.%Y") %> 
+			<% else %>
+				<%= page.created_at.strftime("%d.%m.%Y") %>
+			<% end %>
 		</div>
 	</div>
 </div>
