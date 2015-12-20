@@ -5,7 +5,7 @@
 <% page.admin_users.each do |ath|%>
 <%= link_to ath.name, author_path(id: ath.id)%>
 <%end%>
-<%= page.created_at.strftime("%d.%m.%Y") %>
+<%= page.published_at.strftime("%d.%m.%Y") %>
 <%= page.category %>
 <%= page.theme %>
  <div class="keywords-items col-xs-12 col-sm-12 col-md-12 col-lg-12">

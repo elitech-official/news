@@ -40,10 +40,12 @@ gem 'capistrano-rvm'
 gem 'passenger'
 gem 'ancestry'
 gem 'will_paginate'
-gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
+gem 'jquery-turbolinks'
+gem "cocoon"
+gem 'bootstrap-datepicker-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

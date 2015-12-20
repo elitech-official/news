@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
+//= require cocoon
 //= require ckeditor/init
 //= require turbolinks
+//= require jquery.validate
+//= require bootstrap-datepicker
 //= require_tree .

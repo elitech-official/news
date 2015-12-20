@@ -1,6 +1,6 @@
 ActiveAdmin.register Page do
   
-  permit_params :header, :body, :main, :theme, :category, :preview, :tag_list, :thumb, :admin_user_ids => []
+  permit_params :header, :body, :main, :theme, :category, :preview, :published_at, :tag_list, :thumb, :admin_user_ids => []
   
   actions :all
   
@@ -11,6 +11,7 @@ ActiveAdmin.register Page do
     column :theme
     column :authors
     column :tag_list
+    column :published_at
     actions
   end
   
@@ -60,7 +61,7 @@ ActiveAdmin.register Page do
      f.label "Категория"
      f.select :category, options_for_select([["Новости","Новости"],["Экслюзив", "Эксклюзив"],["Возможности", "Возможности"],["Лайфстайл", "Лайфстайл"],["Советы", "Советы"],["Афиша", "Афиша"]])
      f.input :tag_list, :label => "Тэги (через запятую)"
-     
+     f.input :published_at, class: "datepicker"
    end
    f.actions
  end

@@ -22,6 +22,7 @@ class PagesController < ApplicationController
     @pages = Page.where.not(category: "Новости").last(6)
     @articles = Page.where(category: "Новости").last(9)
     @main_pages = Page.where(main: true)
+    @poll = Poll.all.last
   end
   
   def author
@@ -46,6 +47,10 @@ class PagesController < ApplicationController
   def delete
     @page = Page.friendly.find(params[:id])
     @page.destroy
+  end
+  
+  def add_socials
+    
   end
   
   private

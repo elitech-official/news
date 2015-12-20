@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219045136) do
+ActiveRecord::Schema.define(version: 20151220063438) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 191
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20151219045136) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "name",             limit: 191
+    t.string   "image",            limit: 191
   end
 
   create_table "pages", force: :cascade do |t|
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 20151219045136) do
     t.integer  "thumb_file_size",    limit: 4
     t.datetime "thumb_updated_at"
     t.string   "preview",            limit: 191
+    t.datetime "published_at"
   end
 
   create_table "pages_admin_users", force: :cascade do |t|
@@ -116,6 +118,12 @@ ActiveRecord::Schema.define(version: 20151219045136) do
     t.integer  "admin_user_id", limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "polls", force: :cascade do |t|
+    t.string   "topic",      limit: 191
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -162,4 +170,27 @@ ActiveRecord::Schema.define(version: 20151219045136) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
+  create_table "vote_options", force: :cascade do |t|
+    t.string   "title",      limit: 191
+    t.integer  "poll_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "vote_options", ["poll_id"], name: "index_vote_options_on_poll_id", using: :btree
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id",        limit: 4
+    t.integer  "vote_option_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
+  add_index "votes", ["vote_option_id", "user_id"], name: "index_votes_on_vote_option_id_and_user_id", unique: true, using: :btree
+  add_index "votes", ["vote_option_id"], name: "index_votes_on_vote_option_id", using: :btree
+
+  add_foreign_key "vote_options", "polls"
+  add_foreign_key "votes", "users"
+  add_foreign_key "votes", "vote_options"
 end

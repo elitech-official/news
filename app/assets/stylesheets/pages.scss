@@ -74,8 +74,8 @@
       text-decoration: none;
     }
    & .s { font-size: 0.8vw; }
-   & .m { font-size: 1.2vw; }
-   & .l { font-size: 1.0vw; }
+   & .m { font-size: 1.0vw; }
+   & .l { font-size: 1.2vw; }
    & *:hover{
      text-decoration: none;
      color: #333;
@@ -143,7 +143,8 @@
    & .page-sidebar{
     & .interview{
       min-height:130px;
-      border:1px solid #333;
+      border-top: 1px solid #333;
+      margin-top: 30px;
       margin-bottom:5px;
     }
     & .cloud-tag{
@@ -350,22 +351,6 @@
        & .comment-area{
          & #new_comment{
            width: 100%;
-           & input#comment_name{
-             width: 50%;
-             position: absolute;
-             top: 0;
-             left: 0;
-           }
-           & input[type="submit"]{
-             position: absolute;
-             top: 0;
-             left: 50%;
-             width: 50%;
-           }
-           & #comment_text{
-             width: 100%;
-             margin-top: 20px;
-           }
          }
          margin-top: 20px;
          & .media{
@@ -373,11 +358,17 @@
            & .comment-item{
              border-left: 3px solid #C0C0C0;
              & .comment-header{
+               background-color: #F0FFF0;
                padding: 0;
+               & img{
+                 height: 50px;
+                 width: 50px;
+               }
              }
            }
            & .comment-text{
              display: block;
+             margin-top: 8px;
              font-size: .8vw;
              font-color: #333;
            }
@@ -429,6 +420,12 @@
         } 
                         
  }                 
+ 
+ #new_comment{
+   & textarea{
+     width: 100%;
+   }
+ }
  
  .page-set{
          margin-bottom: 10px;
@@ -515,10 +512,16 @@
   border-top: 1px dotted #333;
   padding-top: 10px;
   margin-top: 20px;                       
-  & .footer {  
+  & .footer { 
+    & .abouts{
+        border-left: 1px dotted #333;
+        line-height: 45px;
+        height: 45px;
+    } 
     min-height:150px;                           
     & .footer-timer{
-      min-height:150px;
+      height: 45px;
+      line-height: 45px;
     }                             
     & .footer-socials{
       & .socials{
@@ -529,17 +532,19 @@
          line-height: 75px;
        }
       }
-      & .partners{
-        min-height:75px;
-       & span{}
-       & a{}
-      }
      }
     }
    }
 
+ .partners{
+        height: 45px;
+        line-height: 45px;
+        margin: 10px 0 10px 0;
+       & span{}
+       & a{}
+      }
+
 .footer-socials{
-  border-left: 1px dotted #333;
   & a{
     &:hover{
       text-decoration: none;
@@ -676,6 +681,7 @@
   height: inherit;
   min-height: 300px;
   margin-top: 10px;
+  height: 600px;
   & #wrapper {
   width: 100%;
   position: absolute;
@@ -688,7 +694,7 @@
 }
   #carousel img {
   display: block;
-  max-height: 300px;
+  max-height: 600px;
   float: left;
 }
  
@@ -759,6 +765,11 @@
                                  //---------MEDIA------------//
                                  
 @media all and (max-width: 420px){
+  
+  .container.slider{
+    height: 300px;
+  }
+  
   .karazina{display:none;}
  .article-title{
     & a{font-size:3.5vw;}
@@ -770,7 +781,9 @@
   
 .cloud-tag{
   & .clouds{font-size:3.5vw;}
-  & .l {font-size:4.5vw; }
+  & .l { font-size: 4.5vw; }
+  & .m { font-size: 3.8vw; }
+  & .s { font-size: 3.1vw; }
 }  
  .no-pages-found{
    & i{font-size:4.5vw;}
@@ -824,6 +837,7 @@
 
 
 @media all and (min-width: 421px) and (max-width: 768px){
+  
   .karazina{display:none;}
   .article-title{
     & a{font-size:2vw;}
@@ -835,7 +849,9 @@
   
 .cloud-tag{
   & .clouds{font-size:2.8vw;}
-  & .l {font-size:2.8vw; }
+  & .l { font-size: 2.8vw; }
+  & .m { font-size: 2.4vw; }
+  & .s { font-size: 2.0vw; }
 }  
  .no-pages-found{
    & i{font-size:2.5vw;}
@@ -897,7 +913,9 @@
   
 .cloud-tag{
   & .clouds{font-size:2.1vw;}
-  & .l {font-size:1.5vw; }
+  & .l { font-size:1.5vw; }
+  & .m { font-size: 1.2vw; }
+  & .s { font-size: .9vw; }
 }  
  .no-pages-found{
    & i{font-size:2.5vw;}

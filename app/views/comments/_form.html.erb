@@ -1,7 +1,7 @@
 <%= form_for [@commentable, @comment] do |f| %>
    <%= f.hidden_field :parent_id %>
-	<%= f.text_field :name, placeholder: "Введите имя"%>
-    <br/>     
+   <%= f.hidden_field :name, value: current_user.name %>
+   <%= f.hidden_field :image, value: current_user.image.nil? ? 'missing_user.jpeg' : current_user.image %>
       <%= f.text_area :text, :rows => 4, placeholder: "Комментарий"%>
    <p>
     <%= f.submit "Отправить" %>

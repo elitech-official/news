@@ -14,7 +14,7 @@
 								<%= link_to ath.name.mb_chars.upcase.to_s, author_path(id: ath.id)%>
 							<%end%> 
 						</span>
-						<span class="pg-time"> <i> <%= @page.created_at.strftime("%d.%m.%Y") %>  </i> </span>
+						<span class="pg-time"> <i> <%= @page.published_at.strftime("%d.%m.%Y") %>  </i> </span>
 						<span class="page-categories"> <%= link_to @page.category.mb_chars.upcase.to_s, pages_path(category: @page.category) %> </span>
 					</div>
 					<div class=" fixt col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -39,29 +39,16 @@
 				  <%= render partial: 'author', locals: {ath: ath}%>
 				<%end%>
 			</div>
-			<div class="socials-module col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				
-<script type="text/javascript">(function(w,doc) {
-if (!w.__utlWdgt ) {
-    w.__utlWdgt = true;
-    var d = doc, s = d.createElement('script'), g = 'getElementsByTagName';
-    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-    s.src = ('https:' == w.location.protocol ? 'https' : 'http')  + '://w.uptolike.com/widgets/v1/uptolike.js';
-    var h=d[g]('body')[0];
-    h.appendChild(s);
-}})(window,document);
-</script>
-<div data-background-alpha="0.0" data-buttons-color="#ffffff" data-counter-background-color="#ffffff" data-share-counter-size="14" data-top-button="false" data-share-counter-type="disable" data-share-style="1" data-mode="share" data-like-text-enable="false" data-hover-effect="scale" data-mobile-view="true" data-icon-color="#ffffff" data-orientation="horizontal" data-text-color="#000000" data-share-shape="round-rectangle" data-sn-ids="fb.vk.tw.ok." data-share-size="30" data-background-color="#ffffff" data-preview-mobile="false" data-mobile-sn-ids="fb.vk.tw.wh.ok.vb." data-pid="1446941" data-counter-background-alpha="1.0" data-following-enable="false" data-exclude-show-more="false" data-selection-enable="true" class="uptolike-buttons" ></div>
 
-			</div>
-			
 			<div class="comment-area col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<span class="comments-header"> </span>
+				<span class="comments-header"><% if current_user.nil?%><%= link_to "Войдите чтобы комментировать", new_user_session_path %> <% end %></span>
 									<% flash.each do |name, msg| %>
 			    <%= content_tag :div, msg, class: "alert alert-info" %>
 			  <% end %>
 				<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<% if !current_user.nil?%>
 					<%= render "comments/form"%>
+					<% end %>
 				</div>
 				<%= nested_comments @comments %>
 				
