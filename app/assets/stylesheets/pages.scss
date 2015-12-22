@@ -82,6 +82,7 @@
 }
 
 .content-article{
+  margin-top: 15px;
   & .article-title{
       border-bottom: 1px solid #333;
       margin: 10px 0 10px 0;
@@ -120,8 +121,9 @@
     margin: 10px 0 10px 0;
     & .article-img{
       margin: 10px 0 10px 0;
+      padding: 0;
       & img{
-        max-height: 130px;
+        max-height: 100px;
         width: 100%;
         min-height: 50px;
       }
@@ -130,6 +132,8 @@
        max-height:100px;
        overflow: hidden;
        margin-top: 10px;
+       padding-left: 10px;
+       color: #333;
        & a{
          text-decoration:none;
          color:#333;
@@ -171,15 +175,17 @@
 
 .page-preview{
       min-height: 100px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
+      padding: 0;
       & img{
-        max-height: 100px;
+        max-height: 300px;
         width: 100%;
         min-height: 100px;
       }
       & .page-text{
         height: 100%;
         position: absolute;
+        padding: 0;
         top: 0;
         left: 0;
         margin-bottom:-200px;
@@ -195,7 +201,8 @@
             left: 0;
             line-height: 100%;
             width: 100%;
-            font-size:0.7vw;
+            font-size: 10px;
+            padding: 10px;
             color: #FFFFFF;
           }
         }
@@ -266,8 +273,8 @@
       margin-bottom: 15px;
       text-align: center;
       & img{
-        min-height: 120px;
-        min-width: 120px;
+        min-height: 130px;
+        min-width: 130px;
         max-height: 130px;
         max-width: 130px;
         border-radius: 50%;
@@ -507,54 +514,120 @@
  }
  
                                 /*-------FOOTER-------*/
-.footer-wrapper{
-  background:#a39f9f;
-  border-top: 1px dotted #333;
-  padding-top: 10px;
-  margin-top: 20px;                       
-  & .footer { 
-    & .abouts{
-        border-left: 1px dotted #333;
-        line-height: 45px;
-        height: 45px;
-    } 
-    min-height:150px;                           
-    & .footer-timer{
-      height: 45px;
-      line-height: 45px;
-    }                             
-    & .footer-socials{
-      & .socials{
-        min-height:75px;
-        margin-bottom:5px;
-        text-align: center;
-       & a{
-         line-height: 75px;
-       }
-      }
-     }
-    }
-   }
 
- .partners{
-        height: 45px;
-        line-height: 45px;
-        margin: 10px 0 10px 0;
-       & span{}
-       & a{}
-      }
+.new-footer-container, .new-footer-right-block, .footer-second-row, .footer-search{
+  background-color: #DCDCDC;
+}
 
-.footer-socials{
-  & a{
+.no-padding{
+  padding: 0;
+}
+.new-footer-container{
+  padding: 0;
+  height: 70px;
+  & .span-contacts{
+    line-height: 50px;
+    font-size: 16px;
+    float: right;
     &:hover{
       text-decoration: none;
-      color: #333;
-      transition: 1s ease;
+      color: blue;
+    }
+  }
+  & .span-who-we-are{
+    line-height: 50px;
+    font-size: 16px;
+    float: left;
+    &:hover{
+      text-decoration: none;
+      color: blue;
+    }
+
+  }
+  & .footer-timer{
+    line-height: 50px;
+    height: 50px;
+  }
+  & .footer-text{
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+  }
+  & ul.socials-ul-list{
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 0;
+    & li{
+      display: inline-block;
+      width: 30%;
+      height: 50px;
+      & a{
+        display: block;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        & i{
+          font-size: 28px;
+          line-height: 50px;
+        }
+      }
     }
   }
 }
 
+.partners{
+  padding: 0;
+  & .span-partners{
+    font-size: 16px;
+  }
+  ul{
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+    & li{
+      display: inline-block;
+      width: 23%;
+      padding: 10px;
+      & img{
+        width: 100%;
+        height: auto;
+        height: 50px;
+      }
+    }
+  }
+}
 
+.footer-second-row{
+  padding-left: 0;
+}
+
+.search-form{
+  float: left;
+  margin: 10px 0 10px 0;
+  float: left;
+& input[type="search"] {
+    border: none; 
+    outline: none;
+    width: 80%;
+    height: 35px;
+    -webkit-appearance: none;  
+    padding-left: 20px;
+    padding-right: 50px;
+    vertical-align: middle; 
+    height: 25px;
+    font-size: 20px;
+    border-radius: 20px;
+   }
+& input[type="submit"] {
+    width: 20px; 
+    height: 20px; 
+    border: none; 
+    margin-left: -50px;
+    background: image-url('icons/347.png') no-repeat center center; 
+    background-size: cover;
+ }
+}
 //---------------------------- INDEX -----------------------------//
 
 .index.container{
@@ -582,17 +655,17 @@
     text-decoration: none;
     font-size: 1vw;
     display: block;
-    min-height: 60px;
   }
 }
 
 .index-page-predate{
-  font-size: .7vw;
+  font-size: 14px;
 }
 
 .index-page-preauthor{
   font-size: .7vw;
   color: #333;
+  padding: 0;
   & a{
     text-decoration: none;
     &:hover{
@@ -604,12 +677,16 @@
 }
 
 .pages-found{
-  border-right: 1px solid #333;
 }
 
 .spacer{
-  padding: 0;
   margin-bottom: 25px;
+  & .text-left{
+    padding: 0;
+  }
+  & .page-preview-credentials{
+    padding: 0;
+  }
 }
 
 
@@ -770,6 +847,24 @@
     height: 300px;
   }
   
+  .pages-found{
+    padding: 0;
+  }
+  
+  .footer-text{
+    line-height: 15px!important;
+  }
+  
+  .span-who-we-are, .span-contacts, .span-partners {
+    font-size: 12px!important;
+  }
+  
+  .search-form{ 
+    & input[type="search"]{
+      font-size: 12px!important;
+    }
+  }
+  
   .karazina{display:none;}
  .article-title{
     & a{font-size:3.5vw;}
@@ -789,15 +884,14 @@
    & i{font-size:4.5vw;}
  }
  .index-page-preheader{
-   & a{font-size:4vw;text-align: center;}
+   & a{font-size: 2.5vw; min-height: 25px;}
  }
  .index-page-predate{
-   text-align:center;
-   font-size:3.7vw;
+   font-size: 10px;
  }
  .index-page-preauthor{
-   text-align:center;
-   font-size:3.7vw;
+   font-size: 10px;
+   
  }
  .about-author-name{font-size:4.5vw;}
  
@@ -857,15 +951,13 @@
    & i{font-size:2.5vw;}
  }
  .index-page-preheader{
-   & a{font-size:2.2vw;text-align: center;}
+   & a{font-size:2.2vw;}
  }
  .index-page-predate{
-   text-align:center;
-   font-size:2vw;
+   font-size: 12px;
  }
  .index-page-preauthor{
-   text-align:center;
-   font-size:2vw;
+   font-size: 12px;
  }
  .about-author-name{font-size:2.5vw;}
  
@@ -921,15 +1013,13 @@
    & i{font-size:2.5vw;}
  }
  .index-page-preheader{
-   & a{font-size:2.2vw;text-align: center;}
+   & a{font-size: 16px; min-height: 70px;}
  }
  .index-page-predate{
-   text-align:center;
-   font-size:2vw;
+   font-size: 12px;
  }
  .index-page-preauthor{
-   text-align:center;
-   font-size:2vw;
+   font-size: 12px;
  }
  .about-author-name{font-size:1.5vw;}
  
@@ -971,6 +1061,9 @@
   & img{
     width: 100%;
     max-height: 600px;
+  }
+  & .caro-header{
+    text-wrap: break-word;
   }
 }
 

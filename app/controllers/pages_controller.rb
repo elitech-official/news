@@ -14,7 +14,10 @@ class PagesController < ApplicationController
       @pages = Page.tagged_with(params[:tag])
       @articles = Article.tagged_with(params[:tag])
     else
-      @pages = Page.all
+     @search = Sunspot.search (Page) do
+       fulltext params[:search]
+     end
+     @pages = @search.results
     end
   end
   
@@ -36,7 +39,7 @@ class PagesController < ApplicationController
   end
   
   def contacts
-    @users = AdminUser.all
+    @users = AdminUser.where(is_journalist: false)
   end
   
   def show

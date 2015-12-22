@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220063438) do
+ActiveRecord::Schema.define(version: 20151222044306) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 191
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151220063438) do
     t.string   "instagram",              limit: 191
     t.string   "rss",                    limit: 191
     t.string   "occupy",                 limit: 191
+    t.boolean  "is_journalist"
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree

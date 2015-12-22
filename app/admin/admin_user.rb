@@ -1,14 +1,15 @@
 ActiveAdmin.register AdminUser do
-  permit_params :email, :password, :password_confirmation, :avatar, :info, :occupy, :vk, :fb, :instagram, :twitter, :rss, :name, :published_at
+  permit_params :email, :password, :password_confirmation, :avatar, :info, :occupy, :vk, :fb, :instagram, :twitter, :rss, :name, :published_at, :is_journalist
 
   index do
     selectable_column
     id_column
     column :name
     column :occupy
+    column :is_journalist
     column :current_sign_in_at
     column :sign_in_count
-    column :published_at
+    column :created_at
     actions
   end
 
@@ -23,6 +24,8 @@ ActiveAdmin.register AdminUser do
       f.input :name, :label => "Имя"
       f.input :email, :label => "Электронная почта"
       f.input :occupy, :label => "Должность"
+      f.label "Журналист?"
+      f.check_box :is_journalist
       f.input :password,:label => "Пароль"
       f.input :password_confirmation, :label => "Подтверждение пароля"
       f.input :avatar, :as => :file, :required => false

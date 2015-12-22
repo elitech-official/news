@@ -17,14 +17,14 @@
 					<span class=" index-page-preheader"> <%= link_to page.header, page_path(id: page.slug) %> </span> 
 				</div>
 				<div class="page-preview-credentials col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="index-page-predate text-left col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<div class="index-page-predate text-left col-xs-6 col-sm-6 col-md-6 col-lg-6">
 						<% if !page.published_at.nil? %>
 							<%= page.published_at.strftime("%d.%m.%Y") %> 
 						<% else %>
 							<%= page.created_at.strftime("%d.%m.%Y") %>
 						<% end %>
 					</div>
-					<div class="index-page-preauthor text-right col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<div class="index-page-preauthor text-right col-xs-6 col-sm-6 col-md-6 col-lg-6">
 						<% page.admin_users.each do |ath|%>
 							<%= link_to ath.name.mb_chars.upcase.to_s, author_path(id: ath.id)%>
 						<%end%>

@@ -6,6 +6,10 @@ class Page < ActiveRecord::Base
   has_many :admin_users, through: :pages_admin_users
   has_many :comments, :as => :commentable, :dependent => :destroy
   
+  searchable do
+    text :header, :body, :tag_list, :theme, :thumb, :category
+  end
+  
   # paperclip attachment for header image
   
   has_attached_file :thumb,
