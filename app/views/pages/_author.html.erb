@@ -10,7 +10,7 @@
 			<span class="about-author-info"> <i> <%= ath.info %> </i> </span>
 		</div>
 		<div class="author-about-face col-xs-12 col-sm-4 col-md-4 col-lg-4">
-			 <% if ath.avatar %>
+			 <% if !ath.avatar %>
 			 <%= image_tag 'missing_user.jpeg'%>
 			 <% else %>
 			 <%= image_tag ath.avatar %>
