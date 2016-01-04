@@ -19,10 +19,10 @@
 	<% @articles.each do |article|%>
 	<a href="<%= page_path(id: article.slug)%>">
 	<div class="article col-xs-6 col-sm-4 col-md-4 col-lg-4">
-		<div class="article-img col-xs-6 col-sm-4 col-md-4 col-lg-4">
+		<div class="article-img col-xs-5 col-sm-4 col-md-4 col-lg-4">
 			<%= image_tag article.thumb, :alt=>"Foto"%>
 		</div>
-		<div class="article-text col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<div class="article-text col-xs-7 col-sm8 col-md-8 col-lg-8">
 			<span><%= article.header%></span>
 		</div>
 	</div>
