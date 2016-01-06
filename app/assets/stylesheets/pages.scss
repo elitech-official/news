@@ -20,6 +20,8 @@
         & li{
           float: none;
           display: inline-block;
+          padding:15px;
+          & a{text-decoration:none;}
         }
       }
     }
@@ -145,10 +147,11 @@
 .content-page{
   min-height:150px;
    & .page-sidebar{
+     & h3{margin:0px}
     & .interview{
       min-height:130px;
       border-top: 1px solid #333;
-      margin-top: 30px;
+      margin-top: 3px;
       margin-bottom:5px;
     }
     & .cloud-tag{
@@ -944,6 +947,8 @@
   }
   .caro-header{
     font-size:4.5vw;
+    text-wrap: break-word;
+
   }
  
 }
@@ -1022,6 +1027,12 @@
       height:330px !important;
     }
   }
+  
+   .caro-header{
+    font-size:2.5vw;
+    text-wrap: break-word;
+
+  }
  
 }
 
@@ -1089,6 +1100,11 @@
       height:400px!important;
     }
   }
+  
+   .caro-header{
+    font-size:1.5vw;
+    text-wrap: break-word;
+  }
  
 }
 
@@ -1105,6 +1121,7 @@
   }
   & .caro-header{
     text-wrap: break-word;
+    font-size:1.5vw;
   }
 }
 
