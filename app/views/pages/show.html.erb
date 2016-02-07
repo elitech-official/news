@@ -36,11 +36,7 @@
 				<span> <%= link_to tag, tag_path(tag: tag) %> </span>
 				<% end %>
 			</div>
-			<div class="about-author col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<% @page.admin_users.each do |ath|%>
-				<%= render partial: 'author', locals: {ath: ath}%>
-				<%end%>
-			</div>
+			
 			<div class="socials-module col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<script type="text/javascript">
 						(function(w, doc) {
@@ -75,6 +71,20 @@
 					<%= nested_comments @comments %>
 
 				</div>
+				<div class=" flex no-padding col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="more-popular col-xs-12 col-sm-3 col-md-3 col-lg-3">
+						<h4>Самое популярное</h4>
+						<% @recent_pages.each do |recent|%>
+						<%= render partial:'page_preview', locals: {page: recent}%>
+						<% end %>
+						<div class="advertisement col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+					</div>
+					<div class="about-author col-xs-12 col-sm-8 col-md-8 col-lg-8">
+						<% @page.admin_users.each do |ath|%>
+						<%= render partial: 'author', locals: {ath: ath}%>
+						<%end%>
+					</div>
+				</div>
 			</div>
 		</div>
 			<div class="read-more col-xs-12 col-sm-3 col-md-3 col-lg-3">
@@ -83,5 +93,5 @@
 				<%= render partial:'page_preview', locals: {page: recent}%>
 				<% end %>
 				<div class="advertisement col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
-			</div>
+			</div>	
 	</div>

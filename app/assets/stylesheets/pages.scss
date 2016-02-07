@@ -110,6 +110,8 @@ float: none;
 }
 
 .content-article{
+  text-align:center;
+  min-height:250px;
   margin-top: 15px;
   & .article-title{
       border-bottom: 1px solid #333;
@@ -143,8 +145,8 @@ float: none;
   }
   
 .article{
-    max-height: 175px;
-    height: 125px;
+    max-height: 300px;
+    min-height: 125px;
     font-size: 1.2vw;
     margin: 10px 0 10px 0;
     & .article-img{
@@ -1027,6 +1029,29 @@ float: none;
     text-wrap: break-word;
 
   }
+  
+ .flex{
+   display:flex;
+   -moz-display:flex;
+   -webkit-display:flex;
+   -o-display:flex;
+   flex-direction:column;
+   -moz-flex-direction:column;
+   -webkit-flex-direction:column;
+   -o-flex-direction:column;
+   & .about-author{
+     order:0;
+     -webkit-order:0;
+     -moz-order:0;
+     -o-order:0;
+   }
+   & .more-popular{
+     order:1;
+     -webkit-order:1;
+     -moz-order:1;
+     -o-order:1;
+   }
+ }
  
 }
 
@@ -1062,7 +1087,15 @@ float: none;
  .author-link{font-size:1.5vw;}
  
  .about-author-info{
-   & i{font-size:1.5vw;}
+   & i{font-size:1.2vw;}
+ }
+ .author-about-face{
+   & img{
+     min-height: 100px!important;
+     min-width: 100px!important;
+     max-width: 100px!important;
+     max-height: 100px!important;
+   }
  }
  
  .who-header{
