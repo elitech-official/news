@@ -44,7 +44,9 @@ class PagesController < ApplicationController
   
   def show
     @page = Page.friendly.find(params[:id])
+    @page.punch(request)
     @recent_pages = Page.where(category: @page.category).last(5)
+    @popular_pages = Page.most_hit
   end
   
   def delete

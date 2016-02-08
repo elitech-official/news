@@ -1,32 +1,62 @@
 <div class="container header-wrapper text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<nav class="navbar navbar-default  ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
-      <ul class="  navbar-nav">
-        <li><a href="<%= pages_path(category: "Новости")%>">НОВОСТИ</a></li>
-        <li><a href="<%= pages_path(category: "Эксклюзив")%>">ЭКСКЛЮЗИВ</a></li>
-        <li><a href="<%= pages_path(category: "Возможности")%>">ВОЗМОЖНОСТИ</a></li>
-        <li><a href="<%= pages_path(category: "Лайфстайл")%>">ЛАЙФСТАЙЛ</a></li>
-        <li><a href="<%= pages_path(category: "Советы")%>">СОВЕТЫ</a></li>
-        <li><a href="<%= pages_path(category: "Афиша")%>">АФИША</a></li>
-      </ul>
-     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-	<a href="<%= root_path%>">
-		<div class="header-logo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="karazina col-sm-3 col-md-3 col-lg-3"></div>	
-			<div class="pulse col-xs-12 col-sm-9 col-md-9 col-lg-9"> </div>	
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="<%= root_path %>"> <%= image_tag 'header.jpg'%> </a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="<%= pages_path(category: "Новости")%>">НОВОСТИ</a>
+					</li>
+					<li>
+						<a href="<%= pages_path(category: "Эксклюзив")%>">ЭКСКЛЮЗИВ</a>
+					</li>
+					<li>
+						<a href="<%= pages_path(category: "Возможности")%>">ВОЗМОЖНОСТИ</a>
+					</li>
+					<li>
+						<a href="<%= pages_path(category: "Лайфстайл")%>">ЛАЙФСТАЙЛ</a>
+					</li>
+					<li>
+						<a href="<%= pages_path(category: "Советы")%>">СОВЕТЫ</a>
+					</li>
+					<li>
+						<a href="<%= pages_path(category: "Афиша")%>">АФИША</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<%= image_tag 'search-white.png', class: "search-icon", id: "search-trigger"%>
+					</li>
+				</ul>
+				<ul id="search-ul" class="search-ul">
+					<li>
+						<div class="footer-search col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="no-padding text-center search-form col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<%= form_tag pages_path, method: "get" do %>
+								<input type="search" name="search" placeholder="Найти на сайте..." >
+								<input type="submit" value="">
+								<% end %>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
-	</a>
+	</nav>
+
 </div>
+<script>
+
+$( "#search-trigger" ).click(function() {
+  $( "#search-ul" ).slideToggle( "slow", function() {
+   $('.footer-search').slideToggle("slow")
+  });
+});
+</script>

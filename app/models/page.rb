@@ -19,8 +19,9 @@ class Page < ActiveRecord::Base
   
   extend FriendlyId
   friendly_id :header, use: :slugged
-  acts_as_taggable
   
+  acts_as_taggable
+  acts_as_punchable
   #friendly_id translation & authors
   
   def normalize_friendly_id(text)
