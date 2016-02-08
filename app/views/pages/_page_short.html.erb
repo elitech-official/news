@@ -1,6 +1,6 @@
 <div class="page-item col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <div class="<%= page.category %>"> <%= page.header %></div>
-<%= image_tag page.thumb %>
+<%= image_tag page.thumb class: "sizable" %>
 <%= raw page.body.truncate(200, separator: " ") %>
 <% page.admin_users.each do |ath|%>
 <%= link_to ath.name, author_path(id: ath.id)%>

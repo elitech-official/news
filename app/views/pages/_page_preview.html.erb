@@ -1,7 +1,7 @@
 <div class="page-recent col-sm-12 col-md-12 col-xs-12 col-lg-12">
 	<a href="<%= page_path(id: page.slug)%>">
 	<div class="page-recent-image col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<%= image_tag page.thumb, class: "preview-recent-image" if page.thumb%>
+		<%= image_tag page.thumb, class: "preview-recent-image sizable" if page.thumb%>
 	</div>
 	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 		<span class="page-recent-header"> <%= page.header%> <span>
