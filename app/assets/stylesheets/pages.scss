@@ -6,7 +6,7 @@
 
 *{
   font-family: Roboto, sans-serif;
-}
+  }
 
                         /*-----HEADER------*/
 
@@ -28,6 +28,7 @@ float: none;
   padding-left: 5px;
   padding-right: 5px;
   margin: 0 auto;
+  
 }
   }
 }
@@ -135,11 +136,15 @@ float: none;
      }
     & a{
       text-decoration: none;
-      color:#333;
+      color:#fff;
       font-size:1.2vw;
+      padding: 8px 15px;
+      background-color: #0093DD;
       &:hover{
         color: #333;
         text-decoration: none;
+        border-radius:10px;
+        transition:all 0.5s;
       }
       }
   }
@@ -185,6 +190,7 @@ float: none;
     & .cloud-tag{
       min-height:130px;
       margin-top: 30px;
+      margin-bottom:30px;
       border-top: 1px solid #333;
     }
   }
@@ -198,6 +204,7 @@ float: none;
             top: 0;
             left: 0;
           }
+          
     }
 
      padding: 0px;
@@ -504,7 +511,7 @@ float: none;
        font-size: .7vw;
        font-weight: 400;
        display: block;
-       padding-left: 10px;
+       //padding-left: 10px;
      }
    background-color: white;
    border-bottom: 1px solid #333;
@@ -571,6 +578,12 @@ float: none;
     background: image-url('icons/347.png') no-repeat center center; 
     background-size: cover;
  }
+}
+.more-popular{
+  & h4{
+    margin: 10px 0px;
+    border-bottom: 1px solid #333;
+  }
 }
  
                                 /*-------FOOTER-------*/
@@ -644,7 +657,7 @@ float: none;
 .no-pages-found{
     color: #333;
     font-size: 1.5vw;
-    margin-bottom: 20px;
+    margin-bottom: 75px;
     display: block;
   }
 
@@ -927,7 +940,7 @@ float: none;
  
  
  .page-recent-header{font-size: 3.7vw !important;}
- .recent-author-name {font-size: 3vw !important;}
+ .recent-author-name {font-size: 2.8vw !important;}
  .recent-date{font-size: 3vw !important;}
  .page-recent-text{display:none !important;}
  .page-show-preview{
@@ -1009,10 +1022,10 @@ float: none;
  .page-author{font-size: 2vw !important;}
  
  
- .page-recent-header{font-size: 2.5vw !important;}
- .recent-author-name {font-size: 2vw !important;}
+ .page-recent-header{font-size: 2vw !important;}
+ .recent-author-name {font-size: 1.8vw !important;}
  .recent-date{font-size: 2vw !important;}
- .page-recent-text{font-size:2vw !important;}
+ .page-recent-text{font-size:1.5vw !important;}
  .page-show-preview{
    & span{font-size: 2vw !important;}
  } 
@@ -1104,8 +1117,8 @@ float: none;
  }
 
  
- .page-recent-header{font-size: 1.1vw !important;}
- .recent-author-name {font-size: 0.9vw !important;}
+ .page-recent-header{font-size: 1vw !important;}
+ .recent-author-name {font-size: 0.8vw !important;}
  .recent-date{font-size: 0.9vw !important;}
  .page-recent-text{font-size:10px !important;}
  .page-show-preview{

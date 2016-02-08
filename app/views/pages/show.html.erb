@@ -23,7 +23,7 @@
 						<%= image_tag @page.thumb, class: "sizable" %>
 					</div>
 					<div class="page-show-preview col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<span> <%= @page.preview %> </span>
+						<% if !@page.preview.nil? %><span> <%= @page.preview %> </span><%end%>
 					</div>
 				</div>
 			</div>
@@ -88,7 +88,7 @@
 			</div>
 			<div class="more-popular col-xs-6 col-sm-3 col-md-3 col-lg-3">
 						<h4>Самое популярное</h4>
-						<% @recent_pages.each do |recent|%>
+						<% @popular_pages.each do |recent|%>
 						<%= render partial:'page_preview', locals: {page: recent}%>
 						<% end %>
 						<div class="advertisement col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>

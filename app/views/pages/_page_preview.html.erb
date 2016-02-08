@@ -12,13 +12,7 @@
 			<span class="recent-author-name "><%= link_to adm.name.mb_chars.upcase.to_s, author_path(id: adm.id) %> </span>
 			<% end %>
 		</div>
-		<div class="recent-date col-xs-4 col-md-4 col-sm-4 col-lg-4">
-			<% if !page.published_at.nil? %>
-				<%= page.published_at.strftime("%d.%m.%Y") %> 
-			<% else %>
-				<%= page.created_at.strftime("%d.%m.%Y") %>
-			<% end %>
-		</div>
+		
 	</div>
 </div>
 
