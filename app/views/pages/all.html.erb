@@ -61,7 +61,7 @@
 		</div>
 		<div class="cloud-tag">
 			<span class="clouds"> Облако тэгов </span>
-			<% tag_cloud Page.tag_counts + Article.tag_counts, %w[s m l] do |tag, css_class| %>
+			<% tag_cloud Page.tag_counts, %w[s m l] do |tag, css_class| %>
 			<%= link_to tag.name, tag_path(tag: tag.name), class: css_class %>
 			<% end %>
 		</div>

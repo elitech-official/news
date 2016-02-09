@@ -1,6 +1,6 @@
 ActiveAdmin.register Page do
   
-  permit_params :header, :body, :main, :theme, :category, :preview, :published_at, :tag_list, :thumb, :admin_user_ids => []
+  permit_params :header, :body, :main, :theme, :category, :preview, :published_at, :tag_list, :thumb, :regular_images => [], :admin_user_ids => [] 
   
   actions :all
   
@@ -38,7 +38,7 @@ ActiveAdmin.register Page do
     
     private
     def page_params
-      params.require(:page).permit(:header, :body, :theme, :tag_list, :thumb, :category, :preview, :main, :admin_user_ids =>[])
+      params.require(:page).permit(:header, :body, :theme, :tag_list, :thumb, :category, :preview, :main, :admin_user_ids =>[], :regular_images => [])
     end
   end
   
@@ -62,6 +62,8 @@ ActiveAdmin.register Page do
      f.select :category, options_for_select([["Новости","Новости"],["Экслюзив", "Эксклюзив"],["Возможности", "Возможности"],["Лайфстайл", "Лайфстайл"],["Советы", "Советы"],["Афиша", "Афиша"]])
      f.input :tag_list, :label => "Тэги (через запятую)"
      f.input :published_at, class: "datepicker"
+     f.input :regular_images, :as => :formtastic_attachinary 
+     
    end
    f.actions
  end

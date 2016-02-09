@@ -13,9 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
+//= require jquery-ui
 //= require cocoon
 //= require ckeditor/init
 //= require turbolinks
 //= require jquery.validate
 //= require bootstrap-datepicker
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery.fileupload
+//= require cloudinary/jquery.cloudinary
+//= require attachinary
 //= require_tree .

@@ -9,7 +9,7 @@ set :stages, ["production"]
 set :deploy_via, :remote_cache
 set :scm, :git
 set :keep_releases, 5
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/cloudinary.yml')
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :tests, []
 
@@ -33,6 +33,7 @@ namespace :setup do
       execute "mkdir -p #{shared_path}/config"
       upload! "config/database.yml", "#{shared_path}/config/database.yml"
       upload! "config/secrets.yml", "#{shared_path}/config/secrets.yml"
+      upload! "config/cloudinary.yml", "#{shared_path}/config/cloudinary.yml"
     end
   end
    
