@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Пульс - новостной портал ХНУ им. Каразина</title>
+  
+  <%= favicon_link_tag 'icon.ico' %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -18,9 +20,9 @@
 <body>
 
 	<%= render "layouts/header" %>
-	<%= render 'layouts/title_page' %>
+	
 	<div>
-	<div id="size" class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-offset-lg-2 col-lg-8">
+	<div id="size" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<%= yield %>
 	</div>
 	</div>
