@@ -114,6 +114,7 @@ float: none;
   text-align:center;
   min-height:250px;
   margin-top: 15px;
+  margin-bottom:4vh;
   & .article-title{
       border-bottom: 1px solid #333;
       margin: 10px 0 10px 0;
@@ -138,7 +139,7 @@ float: none;
       text-decoration: none;
       color:#fff;
       font-size:1.2vw;
-      padding: 8px 15px;
+      padding: 2px 15px;
       background-color: #0093DD;
       &:hover{
         color: #333;
@@ -152,14 +153,15 @@ float: none;
 .article{
     max-height: 300px;
     min-height: 125px;
-    font-size: 1.2vw;
+    font-size: 0.8vw;
     margin: 10px 0 10px 0;
     & .article-img{
       margin: 10px 0 10px 0;
       padding: 0;
-      & img{
-        height: 100px;
+       height: 150px;
         width: 100%;
+      & img{
+       
        // min-height: 50px;
       }
     }
@@ -216,10 +218,16 @@ float: none;
       margin-bottom: 10px;
       padding: 0;
       & img{
+       
         height:180px;
         //max-height: 300px;
         width: 100%;
         //min-height: 100px;
+      }
+      & a{
+        display:block;
+        height:180px;
+        width:auto;
       }
       & .page-text{
         height: 100%;
@@ -253,13 +261,12 @@ float: none;
   box-shadow: 0px 0px 5px 2px #7569F5;
 }
 
-.page-preview:hover{
- & .page-text{
-   opacity: 1 !important;
-   transition: ease-out 0.4s;
-   
-   }
-  }
+//.page-preview:hover{
+ //& .page-text{
+   //opacity: 1 !important;
+   //transition: ease-out 0.4s;
+  //   }
+  //}
 
                             /*-------CONTENT-SHOW-------*/
 
@@ -353,6 +360,8 @@ float: none;
            }
            & .fixt{
              padding: 0;
+             max-height:500px;
+            
            }
            & div{
              & span{
@@ -371,7 +380,7 @@ float: none;
                color: #333;
              }
              & img{
-               max-height: 300px;
+               //max-height: 300px;
                width: 100%;
                min-height: 50px;
              }
@@ -442,7 +451,7 @@ float: none;
        }
      & a{
        text-decoration:none;
-       margin:5px;
+      // margin:5px;
        min-height: 50px;
      }
      & .reclam{
@@ -504,8 +513,10 @@ float: none;
  
  .page-recent{
    & .page-recent-image{
-     padding-left: 0px;
-   }
+     padding: 0px;
+     height:100px;
+     margin-right:10px;
+     }
    & .page-recent-text{
        color: #333;
        font-size: .7vw;
@@ -657,7 +668,7 @@ float: none;
 .no-pages-found{
     color: #333;
     font-size: 1.5vw;
-    margin-bottom: 75px;
+    margin-bottom: 35px;
     display: block;
   }
 
@@ -1074,7 +1085,7 @@ float: none;
   }
   
  .article-text{
-    & span{font-size:1.2vw;}
+    & span{font-size:1vw;}
   }
   
 .cloud-tag{
@@ -1087,7 +1098,7 @@ float: none;
    & i{font-size:2.5vw;}
  }
  .index-page-preheader{
-   & a{font-size: 16px; min-height: 70px;}
+   & a{font-size: 16px; min-height: 30px;}
  }
  .index-page-predate{
    font-size: 12px;
