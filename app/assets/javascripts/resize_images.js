@@ -1,4 +1,9 @@
 $(document).ready( function(){
+	
+	
+	var mh = $(document).height()-$('.footer-div').height()- $('.header-wrapper').height();
+	$('#size').css('min-height', mh);
+	
 	$('.sizable').each( function(){
 		var par = $(this).parent();
 		par.css('overflow','hidden');
