@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160208170309) do
+ActiveRecord::Schema.define(version: 20160209103012) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 191
@@ -69,6 +69,22 @@ ActiveRecord::Schema.define(version: 20160208170309) do
     t.datetime "updated_at",                     null: false
     t.integer  "admin_user_id",      limit: 4
   end
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.integer  "attachinariable_id",   limit: 4
+    t.string   "attachinariable_type", limit: 191
+    t.string   "scope",                limit: 191
+    t.string   "public_id",            limit: 191
+    t.string   "version",              limit: 191
+    t.integer  "width",                limit: 4
+    t.integer  "height",               limit: 4
+    t.string   "format",               limit: 191
+    t.string   "resource_type",        limit: 191
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 191, null: false

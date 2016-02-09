@@ -16,6 +16,7 @@ class Page < ActiveRecord::Base
     styles: { medium: "300x300>", large: "800x600>" }
   validates_attachment_content_type :thumb, content_type: /\Aimage\/.*\Z/  
   
+  has_attachments :regular_images, maximum: 50, accept: [:jpg, :png, :jpeg]
   
   extend FriendlyId
   friendly_id :header, use: :slugged

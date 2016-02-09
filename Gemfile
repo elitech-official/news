@@ -48,6 +48,10 @@ gem "cocoon"
 gem 'bootstrap-datepicker-rails'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'cloudinary'
+gem 'attachinary'
+gem 'jquery-fileupload-rails'
+gem 'jquery-ui-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
