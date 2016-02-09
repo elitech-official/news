@@ -1,16 +1,3 @@
-<div class="container slider col-xs-12 col-sm-12 col-md-12 col-lg-12">
-  <div id="wrapper">
-	<div id="carousel">
-		<% @main_pages.each do |page|%>
-				<div class="caro-item">
-				<%= image_tag page.thumb, :alt=>"Foto"%>
-				<a href="<%= page_path(id: page.slug)%>" class="header-link"><span class="caro-header"><%= page.header %></a> </span>
-				</div>
-		<% end %>
-	</div>
-</div>
-</div>
-
 <div class="container content-article col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="article-title">
 		<h3>Новости</h3>

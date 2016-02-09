@@ -36,6 +36,41 @@
 				<span> <%= link_to tag, tag_path(tag: tag) %> </span>
 				<% end %>
 			</div>
+			
+			
+			<div>
+				
+			 <div class="carousel slide" id="myCarousel">
+         		 <div class="carousel-inner">
+                	<div class="item ">
+                  		<div class="col-lg-3 col-xs-3 col-md-3 col-sm-3">
+                 	 	<a href="#">
+                  			<% @page.regular_images.each do |reg_img|%>
+							<div class="regular-image col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<%= cl_image_tag(reg_img.path )%>
+							</div>
+							<% end %>
+                 	 	</a>
+                  		</div>
+                	</div>
+                	<div class="item ">
+                  		<div class="col-lg-3 col-xs-3 col-md-3 col-sm-3">
+                 	 	<a href="#">
+                  			<% @page.regular_images.each do |reg_img|%>
+							<div class="regular-image col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<%= cl_image_tag(reg_img.path )%>
+							</div>
+							<% end %>
+                 	 	</a>
+                  		</div>
+                		</div>
+				 </div>
+			</div>
+				
+		
+			</div>
+			
+			
 			<div class="about-author col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<% @page.admin_users.each do |ath|%>
 						<%= render partial: 'author', locals: {ath: ath}%>
