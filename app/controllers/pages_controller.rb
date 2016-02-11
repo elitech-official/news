@@ -12,7 +12,6 @@ class PagesController < ApplicationController
       @pages = Page.where(theme: params[:theme]).where.not(category: "Новости")
     elsif params[:tag]
       @pages = Page.tagged_with(params[:tag])
-      @articles = Article.tagged_with(params[:tag])
     else
      @search = Sunspot.search (Page) do
        fulltext params[:search]

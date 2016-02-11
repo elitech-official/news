@@ -11,22 +11,22 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li>
+					<li class=<%= "active-menu-item" if params[:category] == "Новости" %>>
 						<a href="<%= pages_path(category: "Новости")%>">НОВОСТИ</a>
 					</li>
-					<li>
+					<li class=<%= "active-menu-item" if params[:category] == "Эксклюзив" %>>
 						<a href="<%= pages_path(category: "Эксклюзив")%>">ЭКСКЛЮЗИВ</a>
 					</li>
-					<li>
+					<li class=<%= "active-menu-item" if params[:category] == "Возможности" %>>
 						<a href="<%= pages_path(category: "Возможности")%>">ВОЗМОЖНОСТИ</a>
 					</li>
-					<li>
+					<li class=<%= "active-menu-item" if params[:category] == "Лайфстайл" %>>
 						<a href="<%= pages_path(category: "Лайфстайл")%>">ЛАЙФСТАЙЛ</a>
 					</li>
-					<li>
+					<li class=<%= "active-menu-item" if params[:category] == "Советы" %>>
 						<a href="<%= pages_path(category: "Советы")%>">СОВЕТЫ</a>
 					</li>
-					<li>
+					<li class=<%= "active-menu-item" if params[:category] == "Афиша" %>>
 						<a href="<%= pages_path(category: "Афиша")%>">АФИША</a>
 					</li>
 				</ul>
