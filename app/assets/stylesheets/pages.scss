@@ -7,7 +7,7 @@
 *{
   font-family: Roboto, sans-serif;
   }
-
+.no-padding{padding-left:0!important;padding-right:0!important;}
                         /*-----HEADER------*/
 
 .title-image-div{
@@ -143,8 +143,9 @@ float: none;
   display: block;
   font-size: 1.2vw;
   color: #333;
-  margin: 15px 0 15px 0;
+  margin: 30px 0 0px 0;
   text-align: left;
+  font-size:24px;
 }
 
 .cloud-tag {
@@ -167,12 +168,12 @@ float: none;
   min-height:250px;
   margin-top: 15px;
   margin-bottom:4vh;
+  padding-right: 15px;
   & .article-title{
       border-bottom: 1px solid #333;
       margin: 10px 0 10px 0;
   }
 
-  padding-right: 25px;
 }
 
 .article-title{
@@ -236,17 +237,19 @@ float: none;
    & .page-sidebar{
      & h3{margin:0px}
     & .interview{
+      background:#ebebeb;
       min-height:130px;
       border-top: 1px solid #333;
       margin-top: 3px;
       margin-bottom:5px;
+      padding:5px;
     }
     & .cloud-tag{
       min-height:130px;
-      margin-top: 30px;
+       background:#ebebeb;
       margin-bottom:30px;
-      border-top: 1px solid #333;
-    }
+     }
+     .clouds{ border-bottom: 1px solid #333;}
   }
   & .page{
     & .article-title{
@@ -266,9 +269,10 @@ float: none;
 }
 
 .page-preview{
+      
       min-height: 100px;
       margin-bottom: 10px;
-      padding: 0;
+      padding-top: 10px;
       & img{
        
         height:180px;
@@ -310,7 +314,7 @@ float: none;
     }
 
 .article:hover{
-  box-shadow: 0px 0px 5px 2px #7569F5;
+  background:#ebebeb;
 }
 
 //.page-preview:hover{
@@ -496,6 +500,9 @@ float: none;
         } 
       }
      & .read-more{
+       padding-bottom: 11px;
+       margin-top: 15px;
+       background:#ebebeb;
        & h4{
          margin: 10px 0 10px 0;
          border-bottom: 1px solid #333;
@@ -564,6 +571,7 @@ float: none;
           }
  
  .page-recent{
+  
    & .page-recent-image{
      padding: 0px;
      height:60px;
@@ -575,7 +583,7 @@ float: none;
        display: block;
        //padding-left: 10px;
      }
-   background-color: white;
+    background: #ebebeb;
    border-bottom: 1px solid #333;
    padding: 5px 5px 5px 0;
      & .page-recent-header{
@@ -647,7 +655,10 @@ float: none;
     border-bottom: 1px solid #333;
   }
 }
- .more-popular{margin-top:50px;}
+ .more-popular{margin-top:50px;
+   background:#ebebeb;
+   padding-bottom:10px;
+ }
                                 /*-------FOOTER-------*/
 
 .footer-div{
@@ -760,12 +771,15 @@ float: none;
   margin-bottom: 25px;
   & .text-left{
     padding: 0;
+    }
   }
-  & .page-preview-credentials{
-    padding: 0;
-  }
+.spacer:hover{
+  background:#ebebeb;
 }
-
+.page-preview-credentials{
+    padding: 5px;
+   
+  }
 
 // ------------------------------ AUTHOR PARTIAL --------------------------------------//
 
@@ -1125,6 +1139,7 @@ float: none;
      -webkit-order:1;
      -moz-order:1;
      -o-order:1;
+   
      
    }
  }
