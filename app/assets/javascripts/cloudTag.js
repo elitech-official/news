@@ -1,7 +1,7 @@
 (function ($) {
     $.fn.cloudTag = function (options) {
         var defualts = {
-             tag: ["l", "m", "s"]
+             tag:"tag"
             ,ballSize:200
         };
         var opts = $.extend({}, defualts, options);
