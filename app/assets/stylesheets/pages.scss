@@ -197,15 +197,20 @@ float: none;
       &:hover{
         color: #333;
         text-decoration: none;
-        border-radius:10px;
-        transition:all 0.5s;
+        transition:all 0.2s;
+        border: 3px solid #0093DD;
+        background-color: #FFF;
       }
       }
   }
   
 .article{
-    max-height: 300px;
-    min-height: 125px;
+    //max-height: 300px;
+    //min-height: 125px;
+    float: none;
+    display: inline-block;
+    height:270px;
+    width:250px;
     font-size: 0.8vw;
     margin: 10px 0 10px 0;
     & .article-img{
@@ -219,14 +224,15 @@ float: none;
       }
     }
     & .article-text{
-       max-height:100px;
+       height:50px;
        overflow: hidden;
        margin-top: 10px;
        padding-left: 10px;
        color: #333;
-       & a{
-         text-decoration:none;
-         color:#333;
+       display:table;
+       & span{
+         display: table-cell;
+         vertical-align: middle;
        }
     }
 
@@ -235,6 +241,7 @@ float: none;
 .content-page{
   min-height:150px;
    & .page-sidebar{
+     padding-left:0px;
      & h3{margin:0px}
     & .interview{
       background:#ebebeb;
@@ -252,6 +259,7 @@ float: none;
      .clouds{ border-bottom: 1px solid #333;}
   }
   & .page{
+    text-align:center;
     & .article-title{
           border-bottom: 1px solid #333;
           margin-bottom: 15px;
@@ -739,9 +747,8 @@ float: none;
     font-weight: 600;
     color: #333;
     margin: 10px 0 10px 0;
-    font-size: 1.2vw;
     text-decoration: none;
-    font-size: 1vw;
+    font-size: 0.7vw;
     display: block;
   }
 }
@@ -751,7 +758,7 @@ float: none;
 }
 
 .index-page-preauthor{
-  font-size: .7vw;
+  font-size: .6vw;
   color: #333;
   padding: 0;
   & a{
@@ -769,9 +776,21 @@ float: none;
 
 .spacer{
   margin-bottom: 25px;
-  & .text-left{
+  width:250px;
+  height:270px;
+  float: none;
+  display: inline-block;
+  & .text-center{
     padding: 0;
+    display:table;
+    & span{
+      display: table-cell;
+      vertical-align: middle;
     }
+    }
+  & .cont-page-preheader{
+    height:45px;
+  }
   }
 .spacer:hover{
   background:#ebebeb;
@@ -818,6 +837,7 @@ float: none;
 //--------------------------------- AUTHOR PAGE --------------------------------//
 
 .author-page.container{
+  
   margin-top: 25px;
   margin-bottom: 25px;
   & .author.container{
@@ -830,6 +850,7 @@ float: none;
 
 
 .author-page{
+  
   & .page-text{
         & a{
           & span{
@@ -844,6 +865,7 @@ float: none;
       }
    }
 }
+.author-pages{text-align: center;}
 
 //----------------------------------- CAROUSEL -----------------------------------//
 
@@ -964,7 +986,7 @@ float: none;
   }
   
  .article-text{
-    & span{font-size:2vw;}
+    & span{font-size:2vw;font-weight:600;}
   }
   
 .cloud-tag{
@@ -1047,7 +1069,7 @@ float: none;
   }
   
  .article-text{
-    & span{font-size:2vw;}
+    & span{font-size:2vw;font-weight:600}
   }
   
   .footer-text{
@@ -1152,7 +1174,7 @@ float: none;
   }
   
  .article-text{
-    & span{font-size:1vw;}
+    & span{font-size:1vw;font-weight:600;}
   }
   
 .cloud-tag{
@@ -1165,7 +1187,7 @@ float: none;
    & i{font-size:2.5vw;}
  }
  .index-page-preheader{
-   & a{font-size: 16px; min-height: 30px;}
+   & a{font-size: 13px; min-height: 15px;}
  }
  .index-page-predate{
    font-size: 11px;
