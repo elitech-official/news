@@ -6,9 +6,6 @@
 		<%= link_to "Страничка статей автора", author_path(id: ath.id), class: "author-link"%>
 	</div>
 	<div class="author-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		<div class="author-about-me no-padding col-xs-12 col-sm-7 col-md-7 col-lg-7">
-			<span class="about-author-info"> <i> <%= ath.info %> </i> </span>
-		</div>
 		<div class="author-about-face col-xs-12 col-sm-5 col-md-5 col-lg-5">
 			 <% if !ath.avatar %>
 			 <%= image_tag 'missing_user.jpeg'%>
@@ -16,6 +13,10 @@
 			 <%= image_tag ath.avatar %>
 			 <% end %>
 		</div>
+		<div class="author-about-me no-padding col-xs-12 col-sm-7 col-md-7 col-lg-7">
+			<span class="about-author-info"> <i> <%= ath.info %> </i> </span>
+		</div>
+		
 		<div class="author-socials col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<ul>
 				<% if ath.vk.length > 5 %>
