@@ -1,7 +1,7 @@
 <%= render 'layouts/title_page' %>
 <div class="container content-article col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="article-title">
-		<h3>Новости <i class="fa fa-volume-up"> </i></h3>
+		<h3><i class="fa fa-volume-up"> </i> НОВОСТИ </h3>
 		<div class="more-ribbon">
 				<div class="more-ribbon-actually">
 				<div class="more-ribbon-top"> </div>
@@ -39,7 +39,7 @@
 </div>
 <div class="content-page container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="page-sidebar col-xs-12 col-sm-3 col-md-3 col-lg-3">
-		<div class="article-title"><h3>ОПРОС НЕДЕЛИ <i class="fa fa-question"> </i></h3> </div>
+		<div class="article-title"><h3> <i class="fa fa-question"> </i>ОПРОС НЕДЕЛИ </h3> </div>
 		<div class="interview ">
 		<h4><%= @poll.topic %></h4>
 
@@ -68,7 +68,7 @@
 </script>
 		</div>
 
-		<span class="clouds"> ОБЛАКО ТЕГОВ <i class="fa fa-hashtag">  </i> </span>
+		<span class="clouds"><i class="fa fa-hashtag">  </i> ОБЛАКО ТЕГОВ  </span>
 		<div class="cloud-tag">
 
 			<% tag_cloud Page.tag_counts, %w[l m s] do |tag, css_class| %>

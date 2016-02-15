@@ -1,6 +1,6 @@
 $(document).ready( function(){
 
-	var mh = $(document).height()-$('.footer-div').height()- $('.header-wrapper').height();
+	var mh = $(window).height()-$('.footer-div').height()- $('.header-wrapper').height();
 	$('#size').css('min-height', mh);
 	
 	$('.sizable').each( function(){
@@ -16,7 +16,7 @@ $(document).ready( function(){
 
 $(window).resize( function(){
 
-	var mh = $(document).height()-$('.footer-div').height()- $('.header-wrapper').height();
+	var mh = $(window).height()-$('.footer-div').height()- $('.header-wrapper').height();
 	$('#size').css('min-height', mh);
 	
 	$('.sizable').each( function(){

@@ -11,12 +11,10 @@
                         /*-----HEADER------*/
 
 .title-image-div{
+  width: 100%;
   padding: 0px;
   height: 600px;
   position: relative;
-  & img{
-    transform: scale(1, .8);
-  }
 }
 
 #size{
@@ -111,6 +109,7 @@ float: none;
 }
 
 .header-wrapper{
+  z-index: 999;
   width: 100%;
   padding: 0;
   & ul{
@@ -133,7 +132,12 @@ float: none;
 
                       /*-------CONTENT-ALL-------*/
                      
-                     
+i{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+                   
 .more-ribbon{
   width: 150px;
   height: 50px!important;
@@ -189,9 +193,11 @@ float: none;
 }
 
 .cloud-tag {
+  padding: 10px;
   line-height: 1.6em;
     & a{
       color: #333;
+      padding: 5px;
       text-decoration: none;
     }
    & .s { font-size: 0.8vw; }
@@ -1021,6 +1027,32 @@ float: none;
                                  
 @media all and (max-width: 420px){
   
+  .spacer{
+    margin: 25px auto;
+    display: block;
+  }
+  
+  .page-body, .page-wapper{
+    padding-right: 0!important;
+  }
+  
+  .more-popular, .read-more{
+    margin-top: 0!important;
+    & .page-recent-container{
+      padding-right: 0;
+    }
+    & .page-recent-header{
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+  
+  .author.container > div{
+    width: 100%;
+    & *{
+      text-align: center;
+    }
+  }
   .container.slider{
     height: 300px;
   }
@@ -1045,24 +1077,24 @@ float: none;
   
   .karazina{display:none;}
  .article-title{
-    & a{font-size:3.5vw;}
+    & a{font-size: 14px;}
   }
   
  .article-text{
-    & span{font-size:2vw;font-weight:600;}
+    & span{font-size: 14px;}
   }
   
 .cloud-tag{
-  & .clouds{font-size:3.5vw;}
-  & .l { font-size: 4.5vw; }
-  & .m { font-size: 3.8vw; }
-  & .s { font-size: 3.1vw; }
+  & .clouds{font-size: 14px;}
+  & .l { font-size: 18px; }
+  & .m { font-size: 14px; }
+  & .s { font-size: 10px; }
 }  
  .no-pages-found{
    & i{font-size:4.5vw;}
  }
  .index-page-preheader{
-   & a{font-size: 2.5vw; min-height: 25px;}
+   & a{font-size: 14px; min-height: 25px;}
  }
  .index-page-predate{
    font-size: 10px;
@@ -1095,44 +1127,79 @@ float: none;
    & span{font-size:4vw !important;}
  }
  .page-show-header{font-size: 4.5vw !important;}
- .page-categories{font-size: 3.5vw !important;}
- .pg-time{font-size: 3.5vw !important;}
- .page-author{font-size: 3.5vw !important;}
+ .page-categories{font-size: 12px!important;}
+ .pg-time{font-size: 12px!important;}
+ .page-author{font-size: 12px!important;}
  
  
- .page-recent-header{font-size: 3.7vw !important;}
+ .page-recent-header{font-size: 14px!important; text-align: jusify;}
  .recent-author-name {font-size: 2.8vw !important;}
  .recent-date{font-size: 3vw !important;}
  .page-recent-text{display:none !important;}
  .page-show-preview{
-   & span{font-size: 3vw !important;}
+   & span{font-size: 12px!important;}
  }
  
- /* то что я впилил */
- .slider{height:300px !important;} 
-  .caro-item{
-    img{
-      height:300px!important;
+.article-title{
+  & h3{
+    width: 150px;
+    left: 0;
+  }
+}
+ 
+.footer-ul-placeholder, .footer-rights{
+  width: 100%!important;
+}
+
+.page-sidebar{
+  & .article-title{
+    & h3{
+      width: 100%;
+      font-size: 24px;
     }
   }
-  .caro-header{
-    font-size:4.5vw;
-    text-wrap: break-word;
+}
 
+.content-article{
+  & .article-title{
+    & h3{
+      font-size: 14px;
+    }
   }
- 
+}
+.page {
+  & .article-title{
+    & h3{
+      font-size: 14px;
+    }
+  }
+}
+
 }
 
 
 @media all and (min-width: 421px) and (max-width: 768px){
   
+  .more-popular, .read-more{
+    margin-top: 0!important;
+    & .page-recent-container{
+      padding-right: 0;
+    }
+    & .page-recent-header{
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+  .page-body, .page-wapper{
+    padding-right: 0!important;
+  }
   .karazina{display:none;}
   .article-title{
-    & a{font-size:2vw;}
+    & a{font-size: 14px;}
   }
   
  .article-text{
-    & span{font-size:2vw;font-weight:600}
+    & span{font-size: 14px;}
   }
   
   .footer-text{
@@ -1140,10 +1207,10 @@ float: none;
   }
   
 .cloud-tag{
-  & .clouds{font-size:2.8vw;}
-  & .l { font-size: 2.8vw; }
-  & .m { font-size: 2.4vw; }
-  & .s { font-size: 2.0vw; }
+  & .clouds{font-size: 2.8vw;}
+  & .l { font-size: 20px; }
+  & .m { font-size: 16px; }
+  & .s { font-size: 12px; }
 }  
  .no-pages-found{
    & i{font-size:2.5vw;}
@@ -1191,18 +1258,6 @@ float: none;
    & span{font-size: 2vw !important;}
  } 
                 /* то что я впилил */
- .slider{height:350px !important;} 
-  .caro-item{
-    img{
-      height:330px !important;
-    }
-  }
-  
-   .caro-header{
-    font-size:2.5vw;
-    text-wrap: break-word;
-
-  }
   
  .flex{
    display:flex;
@@ -1228,7 +1283,36 @@ float: none;
      
    }
  }
- 
+
+.article-title{
+  & h3{
+    font-size: 18px;
+    width: 150px;
+    left: 0;
+  }
+}
+.page-sidebar{
+  & .article-title{
+    & h3{
+      width: 100%;
+      font-size: 24px;
+    }
+  }
+}
+.content-article{
+  & .article-title{
+    & h3{
+      font-size: 18px;
+    }
+  }
+}
+.page {
+  & .article-title{
+    & h3{
+      font-size: 18px;
+    }
+  }
+}
 }
 
 @media all and (min-width: 768px) and (max-width: 1280px){
