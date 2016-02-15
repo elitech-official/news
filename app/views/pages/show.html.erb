@@ -41,8 +41,8 @@
 
 				<div class="carousel slide" id="myCarousel">
 					<div class="carousel-inner">
-
-						<% @page.regular_images.each_with_index do |reg_img,index|%>
+					<% if @page.regular_images.count > 0 %>
+						<% @page.regular_images.each_with_index do |reg_img,index| %>
 						 
 						<% if (index== 0) %>
 						 <div class="item active">
@@ -60,14 +60,16 @@
 						</div>
 						<% end %>
 						<% end %>
+						
 						</div>
 						<a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
           				<a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+          				<% end %>
 					</div>
 				</div>
 
 			</div>
-
+			
 			<div class="about-author col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<% @page.admin_users.each do |ath|%>
 				<%= render partial: 'author', locals: {ath: ath}%>
