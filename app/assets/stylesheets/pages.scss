@@ -12,7 +12,6 @@
 
 .title-image-div{
   padding: 0px;
-  margin-bottom: 25px;
   height: 600px;
   position: relative;
   & img{
@@ -134,6 +133,47 @@ float: none;
 
                       /*-------CONTENT-ALL-------*/
                      
+                     
+.more-ribbon{
+  width: 150px;
+  height: 50px!important;
+  float: right;
+  & .more-ribbon-actually{
+    width: 25px;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    & .more-ribbon-top{
+      border-top: 0px solid transparent;
+      border-right: 25px solid rgb(0, 147, 221);
+      border-bottom: 25px solid transparent;
+    }
+    .more-ribbon-bottom{
+      border-bottom: 0px solid transparent;
+      border-right: 25px solid rgb(0, 147, 221);
+      border-top: 25px solid transparent;
+    }
+    & div{
+      width: 100%;
+      height: 50%;
+    }
+  }
+  & a{
+    display: block;
+    padding: 0!important;
+    width: 125px!important;
+    height: 100%!important;
+    background-color: #0093DD;
+    float: right;
+    text-align: center;
+    font-weight: 600;
+    &:hover{
+      color: #262626;
+      background-color: #0093DD;
+    }
+  }
+}                    
+                    
 .slider{
   min-height:300px;
 }
@@ -164,14 +204,14 @@ float: none;
 }
 
 .content-article{
+  padding: 0!important;
   text-align:center;
   min-height:250px;
-  margin-top: 15px;
   margin-bottom:4vh;
   padding-right: 15px;
   & .article-title{
       border-bottom: 1px solid #333;
-      margin: 10px 0 10px 0;
+      margin: 0 0 10px 0;
   }
 
 }
@@ -179,28 +219,30 @@ float: none;
 .article-title{
     min-height: 30px;
     min-width: 170px;
-    text-align: right;
+    text-align: center;
+    position:relative;
+    height: 50px;
+    line-height: 50px;
+    background-color: #262626;
+    margin: 0!important;
     & h3{
       position: absolute;
-      top:0;
-      left: 10px;
-      margin-top: 0;
+      width: 250px;
+      left: calc( 50% - 125px );
+      margin: 0;
      font-size:24px;
      display: inline;
+     color: white;
+      text-align: center;
+      height: 100%;
+      line-height: 50px;
      }
     & a{
       text-decoration: none;
-      color:#fff;
-      font-size:1.2vw;
+      color: #fff;
+      font-size: 14px;
       padding: 2px 15px;
       background-color: #0093DD;
-      &:hover{
-        color: #333;
-        text-decoration: none;
-        transition:all 0.2s;
-        border: 3px solid #0093DD;
-        background-color: #FFF;
-      }
       }
   }
   
@@ -239,6 +281,7 @@ float: none;
   }
 
 .content-page{
+  padding: 0;
   min-height:150px;
    & .page-sidebar{
      padding-left:0px;
@@ -246,29 +289,30 @@ float: none;
     & .interview{
       background:#ebebeb;
       min-height:130px;
-      border-top: 1px solid #333;
-      margin-top: 3px;
-      margin-bottom:5px;
-      padding:5px;
+      padding:15px;
     }
     & .cloud-tag{
       min-height:130px;
        background:#ebebeb;
       margin-bottom:30px;
      }
-     .clouds{ border-bottom: 1px solid #333;}
+     .clouds{
+       display: block;
+       width: 100%;
+       height: 50px;
+       background-color: #262626;
+       color: white;
+       margin: 0;
+       line-height: 50px;
+       text-align: center;
+       
+     }
   }
   & .page{
     text-align:center;
     & .article-title{
           border-bottom: 1px solid #333;
           margin-bottom: 15px;
-          & h3{
-            margin-top: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
           
     }
 
@@ -1170,7 +1214,7 @@ float: none;
 
 @media all and (min-width: 768px) and (max-width: 1280px){
   .article-title{
-    & a{font-size:1.2vw;}
+    & a{font-size:14px;}
   }
   
  .article-text{
