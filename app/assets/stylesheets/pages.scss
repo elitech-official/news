@@ -436,7 +436,7 @@ i{
       & .about-author-info{
         padding-left: 10px;
         color: #333;
-        font-size: 1.3vw;
+        
       }
     }
     & .author-about-face{
@@ -656,7 +656,9 @@ i{
    padding: 5px 5px 5px 0;
      & .page-recent-header{
        color: #333;
-       font-size: .7vw;
+       font-size: 10px;
+       height:60px;
+       overflow:hidden;
        font-weight: 600;
        display: block;
      }
@@ -673,7 +675,7 @@ i{
          & .recent-author-name{
            float: left;
            color: #333;
-           font-size: .7vw;
+           font-size: 10px;
            & a{
              text-decoration: none;
              &:hover{
@@ -820,7 +822,7 @@ i{
 }
 
 .index-page-preauthor{
-  font-size: .6vw;
+  font-size: 11px;
   color: #333;
   padding: 0;
   & a{
@@ -974,14 +976,21 @@ i{
     padding-top: 25px;
     padding-bottom: 25px;
   }
-  h2{
-    display: block;
+  & .who-header{
+      height:150px;
+      background: image-url('us-min.jpg') no-repeat center center; 
+      background-size: cover;
+      display:table;
+      width:100%;
+   & h2{
+     vertical-align:middle;
+    display: table-cell;
     margin: 0 auto;
-    padding: 15px 0 15px 0;
+   // padding: 25px 0 15px 0;
     width: 100%;
-    background-color: #D0D0D0;
-    color: #333;
-    font-size: 2.3vw;
+    color: #FFF;
+    font-size: 35px;
+     }
   }
   & p{
     font-size: 1vw;
@@ -1213,10 +1222,10 @@ i{
   & .s { font-size: 12px; }
 }  
  .no-pages-found{
-   & i{font-size:2.5vw;}
+   & i{font-size:18px;}
  }
  .index-page-preheader{
-   & a{font-size:2.2vw;}
+   & a{font-size:12px;}
  }
  .index-page-predate{
    font-size: 11px;
@@ -1224,25 +1233,21 @@ i{
  .index-page-preauthor{
    font-size: 11px;
  }
- .about-author-name{font-size:2.5vw;}
+ .about-author-name{font-size:15px;}
  
- .author-link{font-size:2.5vw;}
+ .author-link{font-size:15px;}
  
  .about-author-info{
-   & i{font-size:2.1vw;}
+   & i{font-size:15px;}
  }
  
- .who-header{
-   & h2{font-size:2.5vw;}
- }
- 
- .coolstory{
-   & p{font-size:2.5vw;}
-   & a{font-size:2.5vw;}
+  .coolstory{
+   & p{font-size:15px;}
+   & a{font-size:15px;}
  }
  
  .occupy{
-   & span{font-size:4vw !important;}
+   & span{font-size:15px;}
  }
  .page-show-header{font-size: 3.2vw !important;}
  .page-categories{font-size: 2vw !important;}
@@ -1250,39 +1255,15 @@ i{
  .page-author{font-size: 2vw !important;}
  
  
- .page-recent-header{font-size: 2vw !important;}
- .recent-author-name {font-size: 1.8vw !important;}
- .recent-date{font-size: 2vw !important;}
+ .page-recent-header{font-size: 10px !important;}
+ .recent-author-name {font-size: 9px !important;}
  .page-recent-text{font-size:1.5vw !important;}
  .page-show-preview{
    & span{font-size: 2vw !important;}
  } 
                 /* то что я впилил */
   
- .flex{
-   display:flex;
-   -moz-display:flex;
-   -webkit-display:flex;
-   -o-display:flex;
-   flex-direction:column;
-   -moz-flex-direction:column;
-   -webkit-flex-direction:column;
-   -o-flex-direction:column;
-   & .about-author{
-     order:0;
-     -webkit-order:0;
-     -moz-order:0;
-     -o-order:0;
-   }
-   & .more-popular{
-     order:1;
-     -webkit-order:1;
-     -moz-order:1;
-     -o-order:1;
-   
-     
-   }
- }
+ 
 
 .article-title{
   & h3{
@@ -1318,23 +1299,22 @@ i{
 @media all and (min-width: 768px) and (max-width: 1280px){
   .article-title{
     & a{font-size:14px;}
+    & h3{font-size:18px;}
   }
   
  .article-text{
-    & span{font-size:1vw;font-weight:600;}
+    & span{font-size:12px;font-weight:600;}
   }
-  
+.clouds{font-size:18px;} 
 .cloud-tag{
-  & .clouds{font-size:2.1vw;}
-  & .l { font-size:1.5vw; }
-  & .m { font-size: 1.2vw; }
-  & .s { font-size: .9vw; }
+   
+  & .s { font-size: 10px; }
 }  
  .no-pages-found{
-   & i{font-size:2.5vw;}
+   & i{font-size:25px;}
  }
  .index-page-preheader{
-   & a{font-size: 13px; min-height: 15px;}
+   & a{font-size: 12px;}
  }
  .index-page-predate{
    font-size: 11px;
@@ -1342,34 +1322,34 @@ i{
  .index-page-preauthor{
    font-size: 11px;
  }
- .about-author-name{font-size:1.5vw;}
+ .about-author-name{font-size:15px;}
  
- .author-link{font-size:1.5vw;}
+ .author-link{font-size:15px;}
  
  .about-author-info{
-   & i{font-size:1.2vw;}
+   & i{font-size:14px;}
  }
   
  .who-header{
-   & h2{font-size:2vw;}
+   
+   & h2{font-size:25px!important;}
  }
  
  .coolstory{
-   & p{font-size:1.6vw;}
-   & a{font-size:1.6vw;}
+   & p{font-size:18px;}
+   & a{font-size:15px;}
  }
  
  .occupy{
-   & span{font-size:2.1vw !important;}
+   & span{font-size:15px !important;}
  }
 
  
- .page-recent-header{font-size: 1vw !important;}
- .recent-author-name {font-size: 0.8vw !important;}
- .recent-date{font-size: 0.9vw !important;}
+ .page-recent-header{font-size: 10px !important;}
+ .recent-author-name {font-size: 10px !important;}
  .page-recent-text{font-size:10px !important;}
  .page-show-preview{
-   & span{font-size: 1vw !important;}
+   & span{font-size: 10px !important;}
  }  
  
  /* то что я впилил */
@@ -1380,29 +1360,14 @@ i{
     }
   }
   
-   .caro-header{
-    font-size:1.5vw;
-    text-wrap: break-word;
-  }
- 
+    
 }
 
 .socials-module{
   margin: 10px 0 10px 0;
 }
 
-.caro-item{
-  height: 500px;
-  display: inline-block;
-  & img{
-    width: 100%;
-    height: 500px;
-  }
-  & .caro-header{
-    text-wrap: break-word;
-    
-  }
-}
+
 
 .header-link{
   position: absolute;
