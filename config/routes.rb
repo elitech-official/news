@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  
-  mount Attachinary::Engine => "/attachinary"
-  
-  
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  mount Attachinary::Engine => '/attachinary'
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :polls
   resources :votes
   mount Ckeditor::Engine => '/ckeditor'
@@ -16,7 +14,7 @@ Rails.application.routes.draw do
   get '/tags/:tag', to: 'pages#index', as: :tag
   get '/who-are-we', to: 'pages#who', as: :about
   get '/contacts', to: 'pages#contacts', as: :contacts
-  get 'pages/author/:id', to: "pages#author", as: :author
+  get 'pages/author/:id', to: 'pages#author', as: :author
   get 'pages/all', to: 'pages#all', as: :all
   root to: 'pages#all'
   # The priority is based upon order of creation: first created -> highest priority.

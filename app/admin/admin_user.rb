@@ -20,25 +20,24 @@ ActiveAdmin.register AdminUser do
   filter :published_at
 
   form do |f|
-    f.inputs "Admin Details" do
-      f.input :name, :label => "Имя"
-      f.input :email, :label => "Электронная почта"
-      f.input :occupy, :label => "Должность"
-      f.label "Журналист?"
+    f.inputs 'Admin Details' do
+      f.input :name, label: 'Имя'
+      f.input :email, label: 'Электронная почта'
+      f.input :occupy, label: 'Должность'
+      f.label 'Журналист?'
       f.check_box :is_journalist
-      f.input :password,:label => "Пароль"
-      f.input :password_confirmation, :label => "Подтверждение пароля"
-      f.input :avatar, :as => :file, :required => false
-      f.input :info, :label => "Краткая информация"
-      f.inputs "Социальные сети" do
-        f.input :vk, :label => "Вконтакте"
-        f.input :fb, :label => "Facebook"
-        f.input :instagram, :label => "Instagram"
-        f.input :twitter, :label => "Twitter"
-        f.input :rss, :label => "Лента RSS"
-        
+      f.input :password, label: 'Пароль'
+      f.input :password_confirmation, label: 'Подтверждение пароля'
+      f.input :avatar, as: :file, required: false
+      f.input :info, label: 'Краткая информация'
+      f.inputs 'Социальные сети' do
+        f.input :vk, label: 'Вконтакте'
+        f.input :fb, label: 'Facebook'
+        f.input :instagram, label: 'Instagram'
+        f.input :twitter, label: 'Twitter'
+        f.input :rss, label: 'Лента RSS'
       end
-    end 
+    end
     f.actions
   end
 end

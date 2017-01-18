@@ -7,12 +7,12 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 set :stage, :production
- 
-#role :app, %w{deploy@<91.215.138.149}
-#role :web, %w{deploy@<91.215.138.149}
-#role :db,  %w{deploy@<91.215.138.149}
 
-server "178.20.159.61", user: 'root', roles: %w{app web db}
+# role :app, %w{deploy@<91.215.138.149}
+# role :web, %w{deploy@<91.215.138.149}
+# role :db,  %w{deploy@<91.215.138.149}
+
+server '178.20.159.61', user: 'root', roles: %w(app web db)
 # role-based syntax
 # ==================
 
@@ -25,8 +25,6 @@ server "178.20.159.61", user: 'root', roles: %w{app web db}
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-
-
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb
@@ -34,8 +32,6 @@ server "178.20.159.61", user: 'root', roles: %w{app web db}
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-
-
 
 # Custom SSH Options
 # ==================

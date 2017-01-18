@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
@@ -21,37 +22,37 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'activeadmin', github: 'activeadmin'
-gem 'friendly_id'
-gem 'devise'
 gem 'acts-as-taggable-on', '~> 3.4'
-gem 'babosa'
-gem 'ckeditor', github: 'galetahub/ckeditor'
-gem 'bootstrap-sass'
-gem 'paperclip', "~> 4.2"
-gem "carrierwave"
-gem "mini_magick"
-gem "punching_bag"
-gem 'capistrano'
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
-gem 'capistrano-rvm'
-gem 'passenger'
 gem 'ancestry'
-gem 'will_paginate'
+gem 'attachinary'
+gem 'babosa'
+gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-sass'
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
+gem 'carrierwave'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'cloudinary'
+gem 'cocoon'
+gem 'devise'
+gem 'friendly_id'
+gem 'jquery-fileupload-rails'
+gem 'jquery-turbolinks'
+gem 'jquery-ui-rails'
+gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
-gem 'jquery-turbolinks'
-gem "cocoon"
-gem 'bootstrap-datepicker-rails'
+gem 'paperclip', '~> 4.2'
+gem 'passenger'
+gem 'punching_bag'
+gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sunspot_rails'
 gem 'sunspot_solr'
-gem 'cloudinary'
-gem 'attachinary'
-gem 'jquery-fileupload-rails'
-gem 'jquery-ui-rails'
+gem 'will_paginate'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -63,7 +64,9 @@ gem 'jquery-ui-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'better_errors'
   gem 'byebug'
+  gem 'rubocop', require: false
 end
 
 group :development do
@@ -73,4 +76,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

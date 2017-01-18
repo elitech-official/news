@@ -1,13 +1,12 @@
 class PollsController < ApplicationController
-  
   def index
     @polls = Poll.all
   end
-  
+
   def show
     @poll = Poll.find_by_id(params[:id])
   end
-  
+
   def new
     @poll = Poll.new
   end
@@ -21,11 +20,11 @@ class PollsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def edit
     @poll = Poll.find_by_id(params[:id])
   end
-  
+
   def update
     @poll = Poll.find_by_id(params[:id])
     if @poll.update_attributes(poll_params)
@@ -35,7 +34,7 @@ class PollsController < ApplicationController
       render 'edit'
     end
   end
-  
+
   def destroy
     @poll = Poll.find_by_id(params[:id])
     if @poll.destroy
@@ -45,11 +44,10 @@ class PollsController < ApplicationController
     end
     redirect_to polls_path
   end
-  
+
   private
 
   def poll_params
     params.require(:poll).permit(:topic, vote_options_attributes: [:id, :title, :_destroy])
   end
-  
 end
